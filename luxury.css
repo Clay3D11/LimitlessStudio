@@ -76,12 +76,6 @@ body::before {
   content: "";
   pointer-events: none;
 
-  /* background-image: url();
-  background-size: cover;
-  background-position: center; */
-
-
-
 }
 
 .eyebrow {
