@@ -28,6 +28,12 @@ studioInfoDialog?.addEventListener("click", (event) => {
   if (event.target === studioInfoDialog) studioInfoDialog.close();
 });
 
+$(".about-toggle-tag")?.addEventListener("click", (event) => {
+  const content = $("#remix-about");
+  content.hidden = !content.hidden;
+  event.currentTarget.setAttribute("aria-expanded", String(!content.hidden));
+});
+
 const revealItems = $$(".reveal-ready");
 
 if ("IntersectionObserver" in window) {
