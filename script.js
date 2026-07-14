@@ -17,6 +17,17 @@ siteNav?.addEventListener("click", (event) => {
   menuButton?.setAttribute("aria-expanded", "false");
 });
 
+const studioInfoTag = $(".studio-info-tag");
+const studioInfoDialog = $("#studio-info-dialog");
+const studioInfoClose = $(".studio-info-close");
+
+studioInfoTag?.addEventListener("click", () => studioInfoDialog?.showModal());
+studioInfoClose?.addEventListener("click", () => studioInfoDialog?.close());
+
+studioInfoDialog?.addEventListener("click", (event) => {
+  if (event.target === studioInfoDialog) studioInfoDialog.close();
+});
+
 const revealItems = $$(".reveal-ready");
 
 if ("IntersectionObserver" in window) {
