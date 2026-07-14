@@ -197,7 +197,8 @@ h3 {
   font-size: clamp(1.06rem, 2vw, 1.32rem);
 }
 
-.studio-info-tag {
+.studio-info-tag,
+.about-toggle-tag {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -217,7 +218,9 @@ h3 {
 }
 
 .studio-info-tag:hover,
-.studio-info-tag:focus-visible {
+.studio-info-tag:focus-visible,
+.about-toggle-tag:hover,
+.about-toggle-tag:focus-visible {
   transform: translateY(-2px);
   background: rgba(0, 232, 255, .16);
   box-shadow: 0 12px 34px rgba(0, 232, 255, .18);
@@ -268,6 +271,8 @@ h3 {
 }
 
 .studio-info-list strong { color: var(--cyan); }
+
+.about-copy:not([hidden]) { display: block; margin-top: 16px; }
 
 .studio-info-card a {
   color: var(--cyan);
