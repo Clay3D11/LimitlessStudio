@@ -28,10 +28,14 @@ studioInfoDialog?.addEventListener("click", (event) => {
   if (event.target === studioInfoDialog) studioInfoDialog.close();
 });
 
-$(".about-toggle-tag")?.addEventListener("click", (event) => {
-  const content = $("#remix-about");
-  content.hidden = !content.hidden;
-  event.currentTarget.setAttribute("aria-expanded", String(!content.hidden));
+const aboutStudioDialog = $("#studio");
+$$(".about-studio-tag").forEach((tag) => tag.addEventListener("click", (event) => {
+  event.preventDefault();
+  aboutStudioDialog?.showModal();
+}));
+$(".about-studio-close")?.addEventListener("click", () => aboutStudioDialog?.close());
+aboutStudioDialog?.addEventListener("click", (event) => {
+  if (event.target === aboutStudioDialog) aboutStudioDialog.close();
 });
 
 const revealItems = $$(".reveal-ready");
