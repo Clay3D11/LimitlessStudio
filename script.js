@@ -13,6 +13,7 @@ menuButton?.addEventListener("click", () => {
 siteNav?.addEventListener("click", (event) => {
   if (!event.target.matches("a")) return;
   siteNav.classList.remove("open");
+  $(".nav-dropdown")?.removeAttribute("open");
   document.body.classList.remove("menu-open");
   menuButton?.setAttribute("aria-expanded", "false");
 });
