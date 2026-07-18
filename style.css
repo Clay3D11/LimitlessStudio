@@ -97,7 +97,8 @@ video {
   align-items: center;
 }
 
-.site-nav a {
+.site-nav a,
+.nav-dropdown summary {
   border: 1px solid transparent;
   border-radius: 999px;
   padding: 9px 14px;
@@ -105,12 +106,30 @@ video {
   font-size: .92rem;
   font-weight: 800;
   transition: .18s ease;
+  cursor: pointer;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.nav-dropdown summary:hover {
   border-color: var(--line);
   color: var(--text);
   background: rgba(255, 255, 255, .08);
+}
+
+.nav-dropdown { position: relative; }
+.nav-dropdown summary { list-style: none; }
+.nav-dropdown summary::-webkit-details-marker { display: none; }
+.nav-dropdown div {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: grid;
+  min-width: 170px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 6px;
+  background: rgba(8, 9, 12, .96);
+  box-shadow: var(--shadow);
 }
 
 .menu-button {
@@ -464,6 +483,8 @@ h3 {
   gap: 16px;
 }
 
+.process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
 .service-card,
 .process-card {
   padding: 22px;
@@ -637,6 +658,15 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  .hero-panel li { text-align: left; }
+
+  #services { padding-block: 0; }
+  #services .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+  #services .service-card { min-height: 0; padding: 8px; }
+  #services .service-card span { margin-bottom: 4px; padding: 2px 6px; }
+  #services .service-card h3 { margin-bottom: 3px; font-size: .95rem; }
+  #services .service-card li { font-size: .78rem; line-height: 1.4; }
+
   .studio-info-card { padding: 28px 18px; }
 
   #studio .studio-mark { min-height: 220px; }
@@ -682,13 +712,16 @@ h3 {
     display: flex;
   }
 
-  .site-nav a {
+  .site-nav a,
+  .nav-dropdown summary {
     display: flex;
     min-height: 46px;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius);
   }
+
+  .nav-dropdown div { position: static; margin-top: 4px; }
 
   .hero-section {
     min-height: 100svh;
