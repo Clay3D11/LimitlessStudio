@@ -47,7 +47,8 @@ body::before {
   box-shadow: 0 0 36px rgba(245, 198, 117, .2);
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.nav-dropdown summary:hover {
   border-color: rgba(245, 198, 117, .3);
   color: var(--champagne);
   background: rgba(245, 198, 117, .08);
@@ -109,6 +110,8 @@ h2 {
 .hero-panel strong {
   color: var(--champagne);
 }
+
+.hero-panel > div { border-color: rgba(0, 232, 255, .55); }
 
 .credibility-bar {
   position: relative;
@@ -206,6 +209,59 @@ h2 {
   color: var(--gold);
 }
 
+#services .service-card {
+  display: grid;
+  min-height: 200px;
+  grid-template-rows: auto auto 1fr;
+  padding: 25px;
+  border-color: rgba(0, 232, 255, .28);
+  border-top: 2px solid var(--cyan);
+  background: linear-gradient(145deg, rgba(0, 232, 255, .09), rgba(255, 255, 255, .03)), var(--panel);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+#services .service-card span {
+  justify-self: start;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 232, 255, .55);
+  border-radius: var(--radius);
+  padding: 5px 10px;
+  color: var(--cyan);
+}
+
+#services .service-card h3 { margin: 0 0 14px; }
+#services .service-card ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
+
+#services .service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 232, 255, .65);
+}
+
+#process .process-card {
+  display: grid;
+  min-height: 240px;
+  grid-template-rows: auto auto 1fr;
+  padding: 25px;
+  border-color: rgba(0, 232, 255, .28);
+  border-top: 2px solid var(--cyan);
+  background: linear-gradient(145deg, rgba(0, 232, 255, .09), rgba(255, 255, 255, .03)), var(--panel);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+#process .process-card span {
+  justify-self: start;
+  border: 1px solid rgba(0, 232, 255, .55);
+  border-radius: var(--radius);
+  padding: 5px 10px;
+  color: var(--cyan);
+}
+#process .process-card ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
+
+#process .process-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 232, 255, .65);
+}
+
 .package-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -215,6 +271,20 @@ h2 {
 .package-card {
   min-height: 100%;
   padding: 22px;
+}
+
+#packages .package-card {
+  border-color: rgba(0, 232, 255, .28);
+  border-top: 2px solid var(--cyan);
+  background: linear-gradient(145deg, rgba(0, 232, 255, .09), rgba(255, 255, 255, .03)), var(--panel);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+#packages .package-card .eyebrow { color: var(--cyan); }
+
+#packages .package-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 232, 255, .65);
 }
 
 .package-card ul {
