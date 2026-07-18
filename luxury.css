@@ -17,7 +17,6 @@
 body {
   color: var(--text);
   background:
-    radial-gradient(circle at 8% 12%, rgba(245, 198, 117, .12), transparent 26rem),
     radial-gradient(circle at 92% 4%, rgba(201, 47, 75, .16), transparent 30rem),
     linear-gradient(180deg, #07070a 0%, #131116 42%, #08080b 100%);
 }
@@ -63,19 +62,6 @@ body::before {
   background:
     linear-gradient(90deg, rgba(7, 7, 10, .97), rgba(7, 7, 10, .76) 48%, rgba(7, 7, 10, .52)),
     linear-gradient(180deg, rgba(7, 7, 10, .16), rgba(7, 7, 10, .96));
-}
-
-.hero-section::after {
-  position: absolute;
-  inset: 16% max(5vw, calc((100vw - var(--max)) / 2)) auto auto;
-  width: min(34vw, 410px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(245, 198, 117, .24);
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 198, 117, .09), transparent 64%);
-  content: "";
-  pointer-events: none;
-
 }
 
 .eyebrow {
@@ -171,9 +157,7 @@ h2 {
   min-height: 360px;
   overflow: hidden;
   border-color: rgba(245, 198, 117, .24);
-  background:
-    radial-gradient(circle, rgba(245, 198, 117, .14), transparent 58%),
-    linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+  background: linear-gradient(145deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
 }
 
 .studio-mark::before {
@@ -217,17 +201,6 @@ h2 {
   overflow: hidden;
 }
 
-.service-card::after,
-.package-card::after {
-  position: absolute;
-  inset: auto 18px 18px auto;
-  width: 42px;
-  aspect-ratio: 1;
-  border: 1px solid rgba(245, 198, 117, .28);
-  border-radius: 50%;
-  content: "";
-}
-
 .service-card span,
 .process-card span {
   color: var(--gold);
@@ -259,20 +232,6 @@ h2 {
   color: var(--muted);
 }
 
-.package-card li::before {
-  display: inline-grid;
-  width: 20px;
-  height: 20px;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid rgba(245, 198, 117, .32);
-  border-radius: 50%;
-  color: var(--gold);
-  content: "+";
-  font-size: .8rem;
-  line-height: 1;
-}
-
 .featured-package {
   border-color: var(--line-strong);
   background:
@@ -282,9 +241,7 @@ h2 {
 
 .contact-content {
   border-color: rgba(245, 198, 117, .28);
-  background:
-    radial-gradient(circle at 50% 0%, rgba(245, 198, 117, .16), transparent 42%),
-    var(--panel-strong);
+  background: var(--panel-strong);
 }
 
 .site-footer a {
@@ -299,10 +256,6 @@ h2 {
 }
 
 @media (max-width: 720px) {
-  .hero-section::after {
-    display: none;
-  }
-
   .credibility-bar,
   .package-grid {
     grid-template-columns: 1fr;
