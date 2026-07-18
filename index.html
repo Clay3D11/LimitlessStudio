@@ -27,10 +27,10 @@
         <a href="#">Home</a>
         <a class="about-studio-tag" href="#studio">About</a>
         <a href="#services">Services</a>
-        <a href="#work">Limitless-Studio</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#packages">Packages</a>
-        <a href="#effects">Effects</a>
+        <details class="nav-dropdown">
+          <summary>Limitless-Studio</summary>
+          <div><a href="#work">Selected Work</a><a href="#showcase">Showcase</a><a href="#packages">Studio Offers</a><a href="#effects">Effects</a></div>
+        </details>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -98,6 +98,8 @@
             <span aria-hidden="true">+</span> About Limitless Studio
           </button>
 
+          <a class="studio-info-tag" href="#contact"><span aria-hidden="true">+</span> Contact</a>
+
           <dialog class="studio-info-dialog" id="studio-info-dialog" aria-labelledby="studio-info-title">
             <div class="studio-info-card">
               <button class="studio-info-close" type="button" aria-label="Close studio information">&times;</button>
@@ -130,6 +132,23 @@
                   </div>
                 </div>
               </div>
+              <div class="hero-panel" aria-label="Studio highlights">
+                <div>
+                  <strong>Luxury Real Estate Marketing</strong>
+                  <span>Cinematic property tours, scroll-stopping social media reels, aerial drone showcases, and premium branded content crafted to attract buyers, impress sellers, and elevate your real estate brand.</span>
+                  <span><ul style="list-style: none;"><li>✓ Luxury Listing Videos</li><li>✓ Social Media Reels</li><li>✓ Drone Cinematics</li><li>✓ Property Walkthroughs</li><li>✓ Agent Branding</li><li>✓ Motion Graphics</li><li>✓ Fast Turnaround</li><li>✓ 4K Delivery</li></ul></span>
+                </div>
+                <div>
+                  <strong>Ads &amp; Campaigns</strong>
+                  <span>Scroll-stopping short-form ads, branded campaigns, product promos, and social-first content crafted to capture attention, connect with customers, and drive results for your brand.</span>
+                  <span><ul style="list-style: none;"><li>✓ Short-Form Video Ads</li><li>✓ Social Media Campaigns</li><li>✓ Product Promos</li><li>✓ Brand Launch Videos</li><li>✓ Motion Graphics</li><li>✓ Promotional Reels</li><li>✓ Fast Turnaround</li><li>✓ 4K Delivery</li></ul></span>
+                </div>
+                <div>
+                  <strong>Music Videos</strong>
+                  <span>Cinematic music videos, performance edits, visual storytelling, and artist-focused content crafted to match your sound, strengthen your identity, and keep your audience watching.</span>
+                  <span><ul style="list-style: none;"><li>✓ Performance Video Edits</li><li>✓ Beat-Synced Cuts</li><li>✓ Cinematic Color Grading</li><li>✓ Visual Effects &amp; VFX</li><li>✓ Motion Graphics</li><li>✓ Artist Branding</li><li>✓ Social Media Versions</li><li>✓ 4K Delivery</li></ul></span>
+                </div>
+              </div>
             </div>
           </dialog>
 
@@ -151,20 +170,66 @@
           
 
           <div>
-            <strong>Real Estate Media</strong>
+            <strong>Luxury Real Estate Marketing</strong>
+            <span>Cinematic property tours, scroll-stopping social media reels, aerial drone showcases, and premium branded content crafted to attract buyers, impress sellers, and elevate your real estate brand.</span>
+            <span>
+
+              <ul style="list-style: none;">
+                <li>✓ Luxury Listing Videos</li>
+                <li>✓ Social Media Reels</li>
+                <li>✓ Drone Cinematics</li>
+                <li>✓ Property Walkthroughs</li>
+                <li>✓ Agent Branding</li>
+                <li>✓ Motion Graphics</li>
+                <li>✓ Fast Turnaround</li>
+                <li>✓ 4K Delivery</li>
+              </ul>
+
+            </span>
+            
+            
+            
+            
+            
+            <!-- <strong>Real Estate Media</strong>
             <span>Listing reels, walkthroughs, lifestyle framing</span>
+            <span>Listing reels, walkthroughs, lifestyle framing</span> -->
           </div>
           
           
           <div>
             <strong>Ads & Campaigns</strong>
-            <span>Short-form ads, brand drops, product promos</span>
+            <span>Scroll-stopping short-form ads, branded campaigns, product promos, and social-first content crafted to capture attention, connect with customers, and drive results for your brand.</span>
+            <span>
+              <ul style="list-style: none;">
+                <li>✓ Short-Form Video Ads</li>
+                <li>✓ Social Media Campaigns</li>
+                <li>✓ Product Promos</li>
+                <li>✓ Brand Launch Videos</li>
+                <li>✓ Motion Graphics</li>
+                <li>✓ Promotional Reels</li>
+                <li>✓ Fast Turnaround</li>
+                <li>✓ 4K Delivery</li>
+              </ul>
+            </span>
           </div>
           
           
           <div>
             <strong>Music Videos</strong>
-            <span>Performance cuts, rhythm, mood, visual identity</span>
+            <span>Cinematic music videos, performance edits, visual storytelling, and artist-focused content crafted to match your sound, strengthen your identity, and keep your audience watching.</span>
+            <span>
+              <ul style="list-style: none;">
+                <li>✓ Performance Video Edits</li>
+                <li>✓ Beat-Synced Cuts</li>
+                <li>✓ Cinematic Color Grading</li>
+                <li>✓ Visual Effects & VFX</li>
+                <li>✓ Motion Graphics</li>
+                <li>✓ Artist Branding</li>
+                <li>✓ Social Media Versions</li>
+                <li>✓ 4K Delivery</li>
+              </ul>
+            </span>
           </div>
 
         </aside>
@@ -174,10 +239,10 @@
 
 
       <section class="credibility-bar" aria-label="Studio capabilities">
-        <div><strong>4K-ready</strong><span>social and web delivery</span></div>
-        <div><strong>Studio style</strong><span>lighting, motion, story</span></div>
-        <div><strong>Fast edits</strong><span>clean review workflow</span></div>
-        <div><strong>Multi-format</strong><span>reels, ads, promos, listings</span></div>
+        <div><strong>4K-Ready</strong><span>Social and Web Delivery</span></div>
+        <div><strong>Studio Style</strong><span>Lighting, Motion, Story Telling</span></div>
+        <div><strong>Fast Edits</strong><span>Clean Review Workflow</span></div>
+        <div><strong>Multi-Format</strong><span>Reels, Ads, Promos, Listings</span></div>
       </section>
 
 
@@ -200,28 +265,32 @@
       <section class="section" id="services">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Services</p>
-          <h2>Production services:</h2>
+          <h2>Production & Services.</h2>
         </div>
         <div class="service-grid">
           <article class="service-card reveal-ready">
+            
             <span>01</span>
-            <h3>Music Video Edits</h3>
-            <p>Performance cuts, rhythm edits, color, effects, titles, transitions, and polished release-ready exports.</p>
+
+            <h3>Real Estate Media</h3>
+            
+            <ul><li>✓ Property Walkthroughs</li><li>✓ Listing Reels</li><li>✓ Drone Cinematics</li><li>✓ Realtor Branding</li></ul>
           </article>
           <article class="service-card reveal-ready">
             <span>02</span>
             <h3>Videography</h3>
-            <p>Studio sessions, artist content, brand footage, behind-the-scenes clips, and cinematic social coverage.</p>
+            <ul><li>✓ Studio Sessions</li><li>✓ Brand Footage</li><li>✓ Event Coverage</li><li>✓ Behind the Scenes</li></ul>
           </article>
           <article class="service-card reveal-ready">
             <span>03</span>
             <h3>Photography</h3>
-            <p>Portraits, campaign stills, cover visuals, product frames, real estate details, and image-led content.</p>
+            <ul><li>✓ Professional Portraits</li><li>✓ Campaign Stills</li><li>✓ Product Photography</li><li>✓ Cover Visuals</li></ul>
           </article>
           <article class="service-card reveal-ready">
             <span>04</span>
-            <h3>Real Estate Media</h3>
-            <p>Walkthrough edits, property reels, listing promos, lifestyle pacing, and high-end realtor marketing visuals.</p>
+            <h3>Music Video Edits</h3>
+            <ul><li>✓ Beat-Synced Cuts</li><li>✓ Color Grading</li><li>✓ VFX &amp; Transitions</li><li>✓ 4K Delivery</li></ul>
+            
           </article>
         </div>
       </section>
@@ -381,33 +450,34 @@
         </div>
         <div class="package-grid">
           <article class="package-card reveal-ready">
-            <p class="eyebrow">Artists</p>
-            <h3>Music Video Package</h3>
+            <p class="eyebrow">Realtors</p>
+            <h3>Property Promo Package</h3>
             <ul>
-              <li>Performance footage edit</li>
-              <li>Beat cuts and visual rhythm</li>
-              <li>Color, transitions, effects</li>
-              <li>Vertical and wide exports</li>
+              <li>✓ Walkthrough and listing reels</li>
+              <li>✓ Exterior, interior, detail pacing</li>
+              <li>✓ Luxury property presentation</li>
+              <li>✓ Social and web exports</li>
             </ul>
           </article>
           <article class="package-card featured-package reveal-ready">
             <p class="eyebrow">Brands</p>
-            <h3>Ad Campaign Package</h3>
+            <h3>Ads Campaign Package</h3>
             <ul>
-              <li>Short ad edit for social</li>
-              <li>Product or service highlight</li>
-              <li>Motion titles and CTA moments</li>
-              <li>Platform-ready delivery</li>
+              <li>✓ Short ad edit for social</li>
+              <li>✓ Product or service highlight</li>
+              <li>✓ Motion titles and CTA moments</li>
+              <li>✓ Platform-ready delivery</li>
             </ul>
           </article>
           <article class="package-card reveal-ready">
-            <p class="eyebrow">Realtors</p>
-            <h3>Property Promo Package</h3>
+            <p class="eyebrow">Artists</p>
+            <h3>Music Video Package</h3>
             <ul>
-              <li>Walkthrough and listing reels</li>
-              <li>Exterior, interior, detail pacing</li>
-              <li>Luxury property presentation</li>
-              <li>Social and web exports</li>
+              <li>✓ Performance footage edit</li>
+              <li>✓ Beat cuts and visual rhythm</li>
+              <li>✓ Color, transitions, effects</li>
+              <li>✓ Vertical and wide exports</li>
+              <li>✓ VFX & SFX</li>
             </ul>
           </article>
         </div>
@@ -463,17 +533,17 @@
           <article class="process-card reveal-ready">
             <span>01</span>
             <h3>Plan the visual</h3>
-            <p>Define the audience, platform, mood, reference style, shot needs, and delivery goal.</p>
+            <ul><li>✓ Define the Audience</li><li>✓ Choose the Platform</li><li>✓ Set the Visual Mood</li><li>✓ Plan the Deliverables</li></ul>
           </article>
           <article class="process-card reveal-ready">
             <span>02</span>
             <h3>Shoot or edit</h3>
-            <p>Capture footage when needed, organize the selects, build the pacing, and shape the main story.</p>
+            <ul><li>✓ Capture the Footage</li><li>✓ Organize the Selects</li><li>✓ Build the Pacing</li><li>✓ Shape the Story</li></ul>
           </article>
           <article class="process-card reveal-ready">
             <span>03</span>
             <h3>Polish and deliver</h3>
-            <p>Color, motion, sound feel, titles, final exports, and revision pass are prepared for release.</p>
+            <ul><li>✓ Color and Sound</li><li>✓ Motion and Titles</li><li>✓ Revision Pass</li><li>✓ Final Export</li></ul>
           </article>
         </div>
       </section>
