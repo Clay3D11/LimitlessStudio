@@ -483,7 +483,13 @@ h3 {
   gap: 16px;
 }
 
-.process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.process-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.flow-divider { position: relative; width: 44px; height: 84px; margin: -42px auto; color: var(--cyan); }
+.flow-divider::before { position: absolute; top: 0; left: 50%; width: 2px; height: 64px; background: rgba(0, 232, 255, .28); box-shadow: 0 0 12px rgba(0, 232, 255, .35); content: ""; transform: translateX(-50%); }
+.flow-divider::after { position: absolute; right: 8px; bottom: 5px; width: 26px; height: 26px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; filter: drop-shadow(0 0 7px rgba(0, 232, 255, .8)); content: ""; transform: rotate(45deg); }
+.flow-divider span { position: absolute; top: 0; left: 50%; z-index: 1; width: 4px; height: 18px; border-radius: 999px; background: #fff; box-shadow: 0 0 7px #fff, 0 0 16px var(--cyan), 0 0 28px var(--cyan); animation: flowDown 1.8s ease-in infinite; transform: translateX(-50%); }
+@keyframes flowDown { 0% { opacity: 0; transform: translate(-50%, -5px); } 18% { opacity: 1; } 82% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, 55px); } }
 
 .service-card,
 .process-card {
@@ -506,6 +512,9 @@ h3 {
 .effect-card p {
   color: var(--muted);
 }
+
+.service-guarantees { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.service-guarantees span { margin: 0; border: 1px solid rgba(0, 232, 255, .35); border-radius: 999px; padding: 4px 8px; color: var(--cyan); background: rgba(0, 232, 255, .07); font-size: .66rem; font-weight: 900; white-space: nowrap; }
 
 /* Pricing */
 .pricing-section { position: relative; overflow: hidden; }
@@ -746,11 +755,22 @@ h3 {
   .hero-panel li { text-align: left; }
 
   #services { padding-block: 0; }
-  #services .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
-  #services .service-card { min-height: 0; padding: 8px; }
-  #services .service-card span { margin-bottom: 4px; padding: 2px 6px; }
-  #services .service-card h3 { margin-bottom: 3px; font-size: .95rem; }
-  #services .service-card li { font-size: .78rem; line-height: 1.4; }
+  #services .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 5px; }
+  #services .service-card { min-height: 205px; height: 100%; padding: 17px 9px; }
+  #services .service-card span { margin-bottom: 6px; padding: 2px 6px; }
+  #services .service-card h3 { margin-bottom: 10px; font-size: .95rem; }
+  #services .service-card ul { display: grid; gap: 6px; padding-block: 4px; }
+  #services .service-card li { font-size: .78rem; line-height: 1.5; }
+  #services .service-guarantees { gap: 3px; margin-bottom: 8px; }
+  #services .service-guarantees span { padding: 3px 5px; font-size: .58rem; }
+
+  #process { padding-block: 0; }
+  #process .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 5px; }
+  #process .process-card { min-height: 205px; height: 100%; padding: 17px 9px; }
+  #process .process-card span { margin-bottom: 6px; padding: 2px 6px; }
+  #process .process-card h3 { margin-bottom: 10px; font-size: .95rem; }
+  #process .process-card ul { display: grid; gap: 6px; padding-block: 4px; }
+  #process .process-card li { font-size: .78rem; line-height: 1.5; }
 
   .studio-info-card { padding: 28px 18px; }
 
