@@ -555,10 +555,21 @@
           <span>Video Editing</span><span>Videography</span><span>Photography</span><span>Real Estate</span><span>Music Videos</span><span>Ads &amp; Campaigns</span><span>Motion &amp; VFX</span><span>Agency Support</span>
         </div>
 
-        <div class="pricing-group reveal-ready" id="pricing-monthly">
+        <div class="pricing-category-grid reveal-ready">
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-monthly"><span>01</span><p class="eyebrow">Monthly content</p><h3>Stay visible. Stay consistent.</h3><small>3 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-editing"><span>02</span><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3><small>4 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-campaigns"><span>03</span><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3><small>6 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-camera"><span>04</span><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3><small>4 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-agencies"><span>05</span><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3><small>3 packages &rarr;</small></button>
+        </div>
+
+        <dialog class="pricing-dialog" id="pricing-monthly" aria-labelledby="pricing-monthly-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close monthly content pricing">&times;</button>
+        <div class="pricing-group">
           <div class="pricing-group-title">
             <span>01</span>
-            <div><p class="eyebrow">Monthly content</p><h3>Stay visible. Stay consistent.</h3></div>
+            <div><p class="eyebrow">Monthly content</p><h3 id="pricing-monthly-title">Stay visible. Stay consistent.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-featured">
             <article class="pricing-card">
@@ -593,11 +604,16 @@
             </article>
           </div>
         </div>
+          </div>
+        </dialog>
 
-        <div class="pricing-group reveal-ready" id="pricing-editing">
+        <dialog class="pricing-dialog" id="pricing-editing" aria-labelledby="pricing-editing-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close one-off editing pricing">&times;</button>
+        <div class="pricing-group">
           <div class="pricing-group-title">
             <span>02</span>
-            <div><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3></div>
+            <div><p class="eyebrow">One-off editing</p><h3 id="pricing-editing-title">Send the footage. Get the finish.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
             <article class="pricing-card compact"><p class="pricing-kicker">Quick start</p><h3>Single Social Edit</h3><p class="pricing-price"><span>$</span>125<small>from</small></p><ul><li>Up to 60 seconds</li><li>Captions, music &amp; color</li><li>1 revision</li></ul><a class="button pricing-button" href="#contact">Book an Edit</a></article>
@@ -606,11 +622,16 @@
             <article class="pricing-card compact"><p class="pricing-kicker">Repurpose</p><h3>Content Multiplier</h3><p class="pricing-price"><span>$</span>750</p><ul><li>1 long-form master edit</li><li>5 vertical social clips</li><li>Captions &amp; platform exports</li></ul><a class="button pricing-button" href="#contact">Multiply My Content</a></article>
           </div>
         </div>
+          </div>
+        </dialog>
 
-        <div class="pricing-group reveal-ready" id="pricing-campaigns">
+        <dialog class="pricing-dialog" id="pricing-campaigns" aria-labelledby="pricing-campaigns-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close campaigns and production pricing">&times;</button>
+        <div class="pricing-group">
           <div class="pricing-group-title">
             <span>03</span>
-            <div><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3></div>
+            <div><p class="eyebrow">Campaigns &amp; production</p><h3 id="pricing-campaigns-title">High-impact visuals made to sell.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
             <article class="pricing-card compact"><p class="pricing-kicker">Paid social</p><h3>Conversion Ad</h3><p class="pricing-price"><span>$</span>550<small>from</small></p><ul><li>15–60 second ad</li><li>Hook, pacing &amp; CTA</li><li>3 aspect ratios</li></ul><a class="button pricing-button" href="#contact">Create My Ad</a></article>
@@ -621,11 +642,16 @@
             <article class="pricing-card compact"><p class="pricing-kicker">Full production</p><h3>Music Video Premiere</h3><p class="pricing-price"><span>$</span>2,500<small>from</small></p><ul><li>Creative concept &amp; shoot</li><li>Full edit, grade &amp; VFX</li><li>3 promotional cutdowns</li></ul><a class="button pricing-button" href="#contact">Plan My Production</a></article>
           </div>
         </div>
+          </div>
+        </dialog>
 
-        <div class="pricing-group reveal-ready" id="pricing-camera">
+        <dialog class="pricing-dialog" id="pricing-camera" aria-labelledby="pricing-camera-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close camera and studio pricing">&times;</button>
+        <div class="pricing-group">
           <div class="pricing-group-title">
             <span>04</span>
-            <div><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3></div>
+            <div><p class="eyebrow">Camera &amp; studio</p><h3 id="pricing-camera-title">Original content, captured by Limitless.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
             <article class="pricing-card compact"><p class="pricing-kicker">Photography</p><h3>Portrait Session</h3><p class="pricing-price"><span>$</span>450<small>from</small></p><p class="pricing-summary">Clean, intentional imagery for your personal or artist brand.</p><ul><li>Up to 90-minute session</li><li>10 professionally edited images</li><li>1 location &amp; 2 looks</li></ul><a class="button pricing-button" href="#contact">Book a Session</a></article>
@@ -634,11 +660,16 @@
             <article class="pricing-card compact"><p class="pricing-kicker">Live coverage</p><h3>Event Highlight</h3><p class="pricing-price"><span>$</span>1,350<small>from</small></p><p class="pricing-summary">Preserve the energy of your event in a cinematic recap.</p><ul><li>Up to 4 hours coverage</li><li>60&ndash;90 second highlight</li><li>2 vertical recap clips</li></ul><a class="button pricing-button" href="#contact">Cover My Event</a></article>
           </div>
         </div>
+          </div>
+        </dialog>
 
-        <div class="pricing-group reveal-ready" id="pricing-agencies">
+        <dialog class="pricing-dialog" id="pricing-agencies" aria-labelledby="pricing-agencies-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close agency partnership pricing">&times;</button>
+        <div class="pricing-group">
           <div class="pricing-group-title">
             <span>05</span>
-            <div><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3></div>
+            <div><p class="eyebrow">Agency partnerships</p><h3 id="pricing-agencies-title">Premium creative power behind your brand.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-partner">
             <article class="pricing-card"><p class="pricing-kicker">White-label editing</p><h3>Agency Edit Partner</h3><p class="pricing-price"><span>$</span>1,850<small>/ month</small></p><p class="pricing-summary">Reliable post-production delivered inside your agency workflow.</p><div class="scope-tags"><span>White label</span><span>Editing</span></div><ul><li>Up to 12 short-form deliverables</li><li>Branded project workflow</li><li>Priority queue &amp; 2 revisions</li><li>Client-ready exports</li></ul><a class="button pricing-button" href="#contact">Partner With Us</a></article>
@@ -646,6 +677,8 @@
             <article class="pricing-card"><p class="pricing-kicker">Custom engagement</p><h3>Campaign Partnership</h3><p class="pricing-price pricing-price-custom">Let's talk</p><p class="pricing-summary">For launches requiring a custom crew, scope, or production plan.</p><div class="scope-tags"><span>Custom scope</span><span>Scalable</span></div><ul><li>Creative direction &amp; pre-production</li><li>Photo, video, motion &amp; VFX</li><li>Multi-platform campaign delivery</li><li>Timeline and usage built to fit</li></ul><a class="button pricing-button" href="#contact">Build a Custom Plan</a></article>
           </div>
         </div>
+          </div>
+        </dialog>
 
         <div class="pricing-note reveal-ready">
           <p><strong>Every vision is different.</strong> Final quotes depend on shoot length, locations, crew, travel, footage volume, animation complexity, usage, and turnaround. A 50% booking deposit reserves production dates; custom scopes are always available.</p>
