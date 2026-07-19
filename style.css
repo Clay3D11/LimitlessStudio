@@ -515,6 +515,22 @@ h3 {
 .pricing-intro { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
 .pricing-service-map { position: relative; display: flex; flex-wrap: wrap; gap: 8px; margin: -34px 0 64px; }
 .pricing-service-map span { border: 1px solid rgba(0, 232, 255, .26); border-radius: 999px; padding: 8px 13px; color: #d7fbff; background: rgba(0, 232, 255, .055); font-size: .75rem; font-weight: 850; letter-spacing: .04em; }
+.pricing-category-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.pricing-category-card { position: relative; min-height: 230px; overflow: hidden; border: 1px solid rgba(0, 232, 255, .28); border-top: 2px solid var(--cyan); border-radius: var(--radius); padding: 22px; color: var(--text); background: linear-gradient(145deg, rgba(0, 232, 255, .1), rgba(255, 255, 255, .025)), var(--panel); box-shadow: var(--shadow); font: inherit; text-align: left; cursor: pointer; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.pricing-category-card:first-child, .pricing-category-card:nth-child(2) { grid-column: span 3; }
+.pricing-category-card:nth-child(n+3) { grid-column: span 2; }
+.pricing-category-card:hover { transform: translateY(-6px); border-color: rgba(0, 232, 255, .75); background: linear-gradient(145deg, rgba(0, 232, 255, .17), rgba(255, 255, 255, .04)), var(--panel); }
+.pricing-category-card > span { display: grid; width: 42px; height: 42px; place-items: center; margin-bottom: 34px; border: 1px solid rgba(0, 232, 255, .5); border-radius: var(--radius); color: var(--cyan); font-size: .74rem; font-weight: 900; }
+.pricing-category-card .eyebrow { margin: 0 0 8px; }
+.pricing-category-card h3 { max-width: 340px; margin: 0; font-size: clamp(1.15rem, 2vw, 1.55rem); }
+.pricing-category-card small { display: block; margin-top: 24px; color: var(--cyan); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+.pricing-dialog { width: min(1380px, 94vw); max-width: none; max-height: 92vh; overflow: auto; border: 1px solid rgba(0, 232, 255, .4); border-radius: var(--radius); padding: 0; color: var(--text); background: rgba(7, 10, 13, .96); box-shadow: 0 34px 120px rgba(0, 0, 0, .78); }
+.pricing-dialog::backdrop { background: rgba(2, 4, 7, .84); backdrop-filter: blur(12px); }
+.pricing-dialog-shell { position: relative; padding: clamp(28px, 5vw, 64px); }
+.pricing-dialog-close { position: sticky; top: 0; z-index: 5; display: grid; width: 46px; height: 46px; float: right; place-items: center; margin: 0 0 18px 18px; border: 1px solid rgba(0, 232, 255, .45); border-radius: 50%; color: var(--cyan); background: rgba(7, 10, 13, .94); font-size: 1.75rem; line-height: 1; cursor: pointer; transition: .18s ease; }
+.pricing-dialog-close:hover { color: #061115; background: var(--cyan); transform: rotate(90deg); }
+.pricing-dialog .pricing-group { clear: both; }
+.pricing-dialog .pricing-group-title { padding-right: 56px; }
 .pricing-group + .pricing-group { margin-top: 72px; }
 .pricing-group { scroll-margin-top: 110px; }
 .pricing-group-title { display: flex; gap: 16px; align-items: center; margin-bottom: 22px; }
@@ -551,8 +567,8 @@ h3 {
 .pricing-note strong { color: #fff; }
 .pricing-note .pricing-button { width: auto; min-width: 210px; }
 
-@media (max-width: 1100px) { .pricing-grid-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .pricing-heading, .pricing-grid { grid-template-columns: 1fr; } .pricing-heading { gap: 16px; margin-bottom: 44px; } .pricing-service-map { margin: -22px 0 48px; } .pricing-group + .pricing-group { margin-top: 54px; } .pricing-card { padding: 24px; } .pricing-summary, .pricing-card.compact .pricing-summary { min-height: 0; } .pricing-note { align-items: stretch; flex-direction: column; } .pricing-note .pricing-button { width: 100%; } }
+@media (max-width: 1100px) { .pricing-grid-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pricing-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pricing-category-card, .pricing-category-card:first-child, .pricing-category-card:nth-child(2), .pricing-category-card:nth-child(n+3) { grid-column: span 1; } }
+@media (max-width: 760px) { .pricing-heading, .pricing-grid, .pricing-category-grid { grid-template-columns: 1fr; } .pricing-heading { gap: 16px; margin-bottom: 44px; } .pricing-service-map { margin: -22px 0 48px; } .pricing-category-card { min-height: 200px; } .pricing-group + .pricing-group { margin-top: 54px; } .pricing-card { padding: 24px; } .pricing-summary, .pricing-card.compact .pricing-summary { min-height: 0; } .pricing-dialog { width: 96vw; max-height: 94vh; } .pricing-dialog-shell { padding: 20px 14px 28px; } .pricing-dialog .pricing-group-title { padding-right: 0; } .pricing-note { align-items: stretch; flex-direction: column; } .pricing-note .pricing-button { width: 100%; } }
 
 .showreel-grid {
   align-items: stretch;
