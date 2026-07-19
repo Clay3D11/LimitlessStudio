@@ -43,6 +43,8 @@
           <div>
             <a href="#pricing">Pricing Overview</a>
             <a href="#pricing-monthly">Monthly Content</a>
+            <a href="#pricing-realtors">Exclusively for Realtors</a>
+            <a href="#pricing-artists">Exclusively for Artists</a>
             <a href="#pricing-editing">One-Off Editing</a>
             <a href="#pricing-campaigns">Campaigns &amp; Production</a>
             <a href="#pricing-camera">Camera &amp; Studio</a>
@@ -627,11 +629,17 @@
 
         <div class="pricing-category-grid reveal-ready">
           <button class="pricing-category-card" type="button" data-pricing-target="pricing-monthly"><span>01</span><p class="eyebrow">Monthly content</p><h3>Stay visible. Stay consistent.</h3><small>3 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-editing"><span>02</span><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3><small>4 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-campaigns"><span>03</span><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3><small>6 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-camera"><span>04</span><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3><small>4 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-agencies"><span>05</span><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3><small>3 packages &rarr;</small></button>
+          <button class="pricing-category-card pricing-category-exclusive" type="button" data-pricing-target="pricing-realtors"><span>02</span><p class="eyebrow">Exclusively for realtors</p><h3>Market the property. Elevate the listing.</h3><small>2 packages &rarr;</small></button>
+          <button class="pricing-category-card pricing-category-exclusive" type="button" data-pricing-target="pricing-artists"><span>03</span><p class="eyebrow">Exclusively for artists</p><h3>Your sound deserves a cinematic world.</h3><small>2 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-editing"><span>04</span><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3><small>4 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-campaigns"><span>05</span><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3><small>6 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-camera"><span>06</span><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3><small>4 packages &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-agencies"><span>07</span><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3><small>3 packages &rarr;</small></button>
         </div>
+
+
+
+
 
         <dialog class="pricing-dialog" id="pricing-monthly" aria-labelledby="pricing-monthly-title">
           <div class="pricing-dialog-shell">
@@ -677,12 +685,13 @@
           </div>
         </dialog>
 
+        
         <dialog class="pricing-dialog" id="pricing-editing" aria-labelledby="pricing-editing-title">
           <div class="pricing-dialog-shell">
             <button class="pricing-dialog-close" type="button" aria-label="Close one-off editing pricing">&times;</button>
         <div class="pricing-group">
           <div class="pricing-group-title">
-            <span>02</span>
+            <span>04</span>
             <div><p class="eyebrow">One-off editing</p><h3 id="pricing-editing-title">Send the footage. Get the finish.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
@@ -695,12 +704,13 @@
           </div>
         </dialog>
 
+        
         <dialog class="pricing-dialog" id="pricing-campaigns" aria-labelledby="pricing-campaigns-title">
           <div class="pricing-dialog-shell">
             <button class="pricing-dialog-close" type="button" aria-label="Close campaigns and production pricing">&times;</button>
         <div class="pricing-group">
           <div class="pricing-group-title">
-            <span>03</span>
+            <span>05</span>
             <div><p class="eyebrow">Campaigns &amp; production</p><h3 id="pricing-campaigns-title">High-impact visuals made to sell.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
@@ -715,12 +725,13 @@
           </div>
         </dialog>
 
+
         <dialog class="pricing-dialog" id="pricing-camera" aria-labelledby="pricing-camera-title">
           <div class="pricing-dialog-shell">
             <button class="pricing-dialog-close" type="button" aria-label="Close camera and studio pricing">&times;</button>
         <div class="pricing-group">
           <div class="pricing-group-title">
-            <span>04</span>
+            <span>06</span>
             <div><p class="eyebrow">Camera &amp; studio</p><h3 id="pricing-camera-title">Original content, captured by Limitless.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-compact">
@@ -733,12 +744,13 @@
           </div>
         </dialog>
 
+
         <dialog class="pricing-dialog" id="pricing-agencies" aria-labelledby="pricing-agencies-title">
           <div class="pricing-dialog-shell">
             <button class="pricing-dialog-close" type="button" aria-label="Close agency partnership pricing">&times;</button>
         <div class="pricing-group">
           <div class="pricing-group-title">
-            <span>05</span>
+            <span>07</span>
             <div><p class="eyebrow">Agency partnerships</p><h3 id="pricing-agencies-title">Premium creative power behind your brand.</h3></div>
           </div>
           <div class="pricing-grid pricing-grid-partner">
@@ -749,6 +761,79 @@
         </div>
           </div>
         </dialog>
+
+        <dialog class="pricing-dialog" id="pricing-artists" aria-labelledby="pricing-artists-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close artist pricing">&times;</button>
+            <div class="pricing-group">
+              <div class="pricing-group-title">
+                <span>03</span>
+                <div><p class="eyebrow">Exclusively for artists</p><h3 id="pricing-artists-title">Turn your record into a visual experience.</h3></div>
+              </div>
+              <div class="pricing-grid pricing-grid-exclusive">
+                <article class="pricing-card">
+                  <p class="pricing-kicker">You shoot. We finish.</p>
+                  <h3>Artist Edit</h3>
+                  <p class="pricing-price"><span>$</span>499<small>starting at</small></p>
+                  <p class="pricing-summary">Send us your footage and we&rsquo;ll shape it into a polished music video built around your sound.</p>
+                  <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
+                  <ul><li>Performance or narrative music video edit</li><li>Beat-synced cuts and professional color grade</li><li>Titles, transitions, and visual treatment</li><li>One revision round</li><li>Platform-ready final export</li></ul>
+                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Edit%20Package">Send My Footage</a>
+                </article>
+
+                <article class="pricing-card pricing-card-popular">
+                  <span class="popular-badge">Full production</span>
+                  <p class="pricing-kicker">We shoot. We finish.</p>
+                  <h3>Artist Premiere</h3>
+                  <p class="pricing-price"><span>$</span>2,500<small>starting at</small></p>
+                  <p class="pricing-summary">A complete music-video experience—from creative direction and filming through the final cinematic edit.</p>
+                  <div class="scope-tags"><span>Production</span><span>Editing</span><span>Creative direction</span></div>
+                  <ul><li>Creative concept and pre-production planning</li><li>Professional on-location video shoot</li><li>Full music video edit and color grade</li><li>Motion graphics and visual effects treatment</li><li>One promotional social cutdown</li></ul>
+                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Premiere%20Package">Plan My Music Video</a>
+                </article>
+              </div>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="pricing-dialog" id="pricing-realtors" aria-labelledby="pricing-realtors-title">
+          <div class="pricing-dialog-shell">
+            <button class="pricing-dialog-close" type="button" aria-label="Close realtor pricing">&times;</button>
+            <div class="pricing-group">
+              <div class="pricing-group-title">
+                <span>02</span>
+                <div><p class="eyebrow">Exclusively for realtors</p><h3 id="pricing-realtors-title">Listing visuals designed to move attention.</h3></div>
+              </div>
+              <div class="pricing-grid pricing-grid-exclusive">
+                <article class="pricing-card">
+                  <p class="pricing-kicker">You capture. We finish.</p>
+                  <h3>Listing Edit</h3>
+                  <p class="pricing-price"><span>$</span>299<small>starting at</small></p>
+                  <p class="pricing-summary">Send us your property footage and we&rsquo;ll transform it into a clean, compelling listing video.</p>
+                  <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
+                  <ul><li>Up to 60-second property video</li><li>Professional pacing and color correction</li><li>Licensed music and branded titles</li><li>Vertical or horizontal delivery</li><li>One revision round</li></ul>
+                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Edit%20Package">Send My Listing Footage</a>
+                </article>
+
+                <article class="pricing-card pricing-card-popular">
+                  <span class="popular-badge">Fast delivery</span>
+                  <p class="pricing-kicker">We capture. We finish.</p>
+                  <h3>Listing Complete</h3>
+                  <p class="pricing-price"><span>$</span>500<small>starting at</small></p>
+                  <p class="pricing-summary">A streamlined, done-for-you property package with filming, editing, and priority delivery included.</p>
+                  <div class="scope-tags"><span>Videography</span><span>Editing</span><span>Priority</span></div>
+                  <ul><li>On-location property video shoot</li><li>Up to 60-second cinematic listing edit</li><li>Professional color, music, and branded titles</li><li>Social-ready vertical delivery</li><li>Fast-turnaround priority workflow</li></ul>
+                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Complete%20Package">Book My Property Shoot</a>
+                </article>
+              </div>
+            </div>
+          </div>
+        </dialog>
+
+        
+
+
+
 
         <div class="pricing-note reveal-ready">
           <p><strong>Every vision is different.</strong> Final quotes depend on shoot length, locations, crew, travel, footage volume, animation complexity, usage, and turnaround. A 50% booking deposit reserves production dates; custom scopes are always available.</p>
