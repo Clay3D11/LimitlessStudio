@@ -13,9 +13,18 @@ menuButton?.addEventListener("click", () => {
 siteNav?.addEventListener("click", (event) => {
   if (!event.target.matches("a")) return;
   siteNav.classList.remove("open");
-  $(".nav-dropdown")?.removeAttribute("open");
+  $$(".nav-dropdown").forEach((dropdown) => dropdown.removeAttribute("open"));
   document.body.classList.remove("menu-open");
   menuButton?.setAttribute("aria-expanded", "false");
+});
+
+$$('.nav-dropdown').forEach((dropdown) => {
+  dropdown.addEventListener('toggle', () => {
+    if (!dropdown.open) return;
+    $$('.nav-dropdown').forEach((otherDropdown) => {
+      if (otherDropdown !== dropdown) otherDropdown.removeAttribute('open');
+    });
+  });
 });
 
 const studioInfoTag = $(".studio-info-tag");
