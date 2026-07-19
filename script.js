@@ -53,6 +53,41 @@ $$('.pricing-dialog').forEach((dialog) => {
   });
 });
 
+const studioDialogIds = ['work', 'showcase', 'packages', 'effects'];
+
+const openStudioDialog = (dialogId) => {
+  const dialog = document.getElementById(dialogId);
+  if (!dialog?.matches('.content-dialog')) return;
+  $$('.content-dialog[open], .pricing-dialog[open]').forEach((openDialog) => openDialog.close());
+  $$('.reveal-ready', dialog).forEach((item) => item.classList.add('revealed'));
+  dialog.showModal();
+  $$('video', dialog).forEach((video) => video.play().catch(() => {}));
+};
+
+$$('[data-studio-target]').forEach((button) => {
+  button.addEventListener('click', () => openStudioDialog(button.dataset.studioTarget));
+});
+
+$$('a[href^="#"]').forEach((link) => {
+  const dialogId = link.hash.slice(1);
+  if (!studioDialogIds.includes(dialogId)) return;
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    openStudioDialog(dialogId);
+  });
+});
+
+$$('.content-dialog').forEach((dialog) => {
+  $$('video', dialog).forEach((video) => video.pause());
+  $('.content-dialog-close', dialog)?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    $$('video', dialog).forEach((video) => video.pause());
+  });
+});
+
 const studioInfoTag = $(".studio-info-tag");
 const studioInfoDialog = $("#studio-info-dialog");
 const studioInfoClose = $(".studio-info-close");
