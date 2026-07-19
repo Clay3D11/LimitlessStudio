@@ -27,6 +27,32 @@ $$('.nav-dropdown').forEach((dropdown) => {
   });
 });
 
+const openPricingDialog = (dialogId) => {
+  const dialog = document.getElementById(dialogId);
+  if (!dialog?.matches('.pricing-dialog')) return;
+  $$('.pricing-dialog[open]').forEach((openDialog) => openDialog.close());
+  dialog.showModal();
+};
+
+$$('[data-pricing-target]').forEach((button) => {
+  button.addEventListener('click', () => openPricingDialog(button.dataset.pricingTarget));
+});
+
+$$('.site-nav a[href^="#pricing-"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    openPricingDialog(link.hash.slice(1));
+  });
+});
+
+$$('.pricing-dialog').forEach((dialog) => {
+  $('.pricing-dialog-close', dialog)?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+    if (event.target.closest('a[href="#contact"]')) dialog.close();
+  });
+});
+
 const studioInfoTag = $(".studio-info-tag");
 const studioInfoDialog = $("#studio-info-dialog");
 const studioInfoClose = $(".studio-info-close");
