@@ -29,7 +29,12 @@
         
         <details class="nav-dropdown">
           <summary>Studio</summary>
-          <div><a href="#work">Selected Work</a><a href="#showcase">Showcase</a><a href="#packages">Studio Offers</a><a href="#effects">Effects</a></div>
+          <div>
+            <a href="#studio-explore">Explore Studio</a>
+            <a href="#work">Selected Work</a>
+            <a href="#showcase">Showcase</a>
+            <a href="#packages">Studio Offers</a>
+            <a href="#effects">Effects</a></div>
         </details>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
@@ -264,11 +269,27 @@
       </section>
 
 
-      <section class="section showreel-section" id="work">
+      <section class="section studio-explore-section" id="studio-explore">
+        <div class="section-heading reveal-ready">
+          <p class="eyebrow">Explore Limitless Studio</p>
+          <h2>See the work. Discover the possibilities.</h2>
+        </div>
+        <div class="studio-category-grid reveal-ready">
+          <button class="studio-category-card" type="button" data-studio-target="work"><span>01</span><p class="eyebrow">Selected work</p><h3>Limitless Studio Showreel</h3><small>Watch the reel &rarr;</small></button>
+          <button class="studio-category-card" type="button" data-studio-target="showcase"><span>02</span><p class="eyebrow">Original vs. Limitless Edition</p><h3>See the Transformation</h3><small>Compare the edits &rarr;</small></button>
+          <button class="studio-category-card" type="button" data-studio-target="packages"><span>03</span><p class="eyebrow">Studio offers</p><h3>Built for Real Projects</h3><small>Explore the offers &rarr;</small></button>
+          <button class="studio-category-card" type="button" data-studio-target="effects"><span>04</span><p class="eyebrow">Effects library</p><h3>Our Signature Finishing</h3><small>View the effects &rarr;</small></button>
+        </div>
+      </section>
+
+      <dialog class="content-dialog" id="work" aria-labelledby="work-dialog-title">
+        <div class="content-dialog-shell">
+          <button class="content-dialog-close" type="button" aria-label="Close selected work">&times;</button>
+      <section class="showreel-section">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Selected work</p>
           <!-- <h2>Selected visual direction.</h2> -->
-          <h2>Limitless Studio.</h2>
+          <h2 id="work-dialog-title">Limitless Studio.</h2>
         </div>
         <div class="showreel-grid">
 
@@ -319,14 +340,20 @@
         
         
       </section>
+        </div>
+      </dialog>
 
       
-      <section class="section" id="showcase">
+      <dialog class="content-dialog" id="showcase" aria-labelledby="showcase-dialog-title">
+        <div class="content-dialog-shell">
+          <button class="content-dialog-close" type="button" aria-label="Close original versus Limitless showcase">&times;</button>
+      <section>
 
 
 
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Original vs. Limitless Edition</p>
+          <h2 id="showcase-dialog-title">See what the Limitless finish changes.</h2>
           <!-- <h2>Original VS Limitless Edition</h2> -->
         </div>
 
@@ -395,12 +422,17 @@
 
 
       </section>
+        </div>
+      </dialog>
 
 
-      <section class="section packages-section" id="packages">
+      <dialog class="content-dialog" id="packages" aria-labelledby="packages-dialog-title">
+        <div class="content-dialog-shell">
+          <button class="content-dialog-close" type="button" aria-label="Close studio offers">&times;</button>
+      <section class="packages-section">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Studio offers</p>
-          <h2>Built for real projects.</h2>
+          <h2 id="packages-dialog-title">Built for real projects.</h2>
         </div>
         <div class="package-grid">
           <article class="package-card reveal-ready">
@@ -436,12 +468,17 @@
           </article>
         </div>
       </section>
+        </div>
+      </dialog>
 
 
-      <section class="section effects-section" id="effects">
+      <dialog class="content-dialog" id="effects" aria-labelledby="effects-dialog-title">
+        <div class="content-dialog-shell">
+          <button class="content-dialog-close" type="button" aria-label="Close effects library">&times;</button>
+      <section class="effects-section">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Effects library</p>
-          <h2>Finishing touches that create the signature.</h2>
+          <h2 id="effects-dialog-title">Finishing touches that create the signature.</h2>
         </div>
         <div class="effects-grid">
           <article class="effect-card reveal-ready">
@@ -478,6 +515,8 @@
           </article>
         </div>
       </section>
+        </div>
+      </dialog>
 
 
       <section class="section" id="services">
@@ -512,9 +551,6 @@
           </article>
         </div>
       </section>
-
-
-
 
 
       <section class="section process-section" id="process">
