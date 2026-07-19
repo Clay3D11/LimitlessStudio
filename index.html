@@ -32,7 +32,17 @@
           <div><a href="#work">Selected Work</a><a href="#showcase">Showcase</a><a href="#packages">Studio Offers</a><a href="#effects">Effects</a></div>
         </details>
         <a href="#process">Process</a>
-        <a href="#pricing">Pricing</a>
+        <details class="nav-dropdown">
+          <summary>Pricing</summary>
+          <div>
+            <a href="#pricing">Pricing Overview</a>
+            <a href="#pricing-monthly">Monthly Content</a>
+            <a href="#pricing-editing">One-Off Editing</a>
+            <a href="#pricing-campaigns">Campaigns &amp; Production</a>
+            <a href="#pricing-camera">Camera &amp; Studio</a>
+            <a href="#pricing-agencies">Agency Partnerships</a>
+          </div>
+        </details>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -534,10 +544,14 @@
             <p class="eyebrow">Pricing</p>
             <h2>Content built for every stage of growth.</h2>
           </div>
-          <p class="pricing-intro">Start with one deliverable or build a complete content engine. Every package is designed to give you a polished result, a clear scope, and room to scale.</p>
+          <p class="pricing-intro">From a single edit to full creative production, choose the level of support that fits your vision. Every package includes a defined scope, professional finishing, and delivery ready for your platform.</p>
         </div>
 
-        <div class="pricing-group reveal-ready">
+        <div class="pricing-service-map reveal-ready" aria-label="Available creative services">
+          <span>Video Editing</span><span>Videography</span><span>Photography</span><span>Real Estate</span><span>Music Videos</span><span>Ads &amp; Campaigns</span><span>Motion &amp; VFX</span><span>Agency Support</span>
+        </div>
+
+        <div class="pricing-group reveal-ready" id="pricing-monthly">
           <div class="pricing-group-title">
             <span>01</span>
             <div><p class="eyebrow">Monthly content</p><h3>Stay visible. Stay consistent.</h3></div>
@@ -548,6 +562,7 @@
               <h3>Social Essentials</h3>
               <p class="pricing-price"><span>$</span>695<small>/ month</small></p>
               <p class="pricing-summary">For new brands that need a professional, consistent presence.</p>
+              <div class="scope-tags"><span>Edit only</span><span>Client footage</span></div>
               <ul><li>4 short-form videos</li><li>Up to 60 seconds each</li><li>Captions, music &amp; color</li><li>1 revision per video</li><li>7-day turnaround</li></ul>
               <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Social%20Essentials%20Package">Choose Essentials</a>
             </article>
@@ -558,6 +573,7 @@
               <h3>Content Engine</h3>
               <p class="pricing-price"><span>$</span>1,495<small>/ month</small></p>
               <p class="pricing-summary">A reliable flow of premium content built to grow attention.</p>
+              <div class="scope-tags"><span>Edit only</span><span>Priority</span></div>
               <ul><li>10 short-form videos</li><li>1 long-form video up to 10 min</li><li>Motion graphics &amp; captions</li><li>2 revisions per deliverable</li><li>72-hour priority turnaround</li><li>Monthly creative direction call</li></ul>
               <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Content%20Engine%20Package">Build My Content Engine</a>
             </article>
@@ -567,13 +583,14 @@
               <h3>Brand Authority</h3>
               <p class="pricing-price"><span>$</span>2,950<small>/ month</small></p>
               <p class="pricing-summary">Your outsourced creative department for high-volume publishing.</p>
+              <div class="scope-tags"><span>Creative partner</span><span>High volume</span></div>
               <ul><li>20 short-form videos</li><li>2 long-form videos up to 15 min</li><li>2 ad creatives or promos</li><li>Advanced motion graphics</li><li>Priority editing queue</li><li>Strategy, thumbnails &amp; exports</li></ul>
               <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Brand%20Authority%20Package">Scale My Brand</a>
             </article>
           </div>
         </div>
 
-        <div class="pricing-group reveal-ready">
+        <div class="pricing-group reveal-ready" id="pricing-editing">
           <div class="pricing-group-title">
             <span>02</span>
             <div><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3></div>
@@ -586,7 +603,7 @@
           </div>
         </div>
 
-        <div class="pricing-group reveal-ready">
+        <div class="pricing-group reveal-ready" id="pricing-campaigns">
           <div class="pricing-group-title">
             <span>03</span>
             <div><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3></div>
@@ -601,8 +618,33 @@
           </div>
         </div>
 
+        <div class="pricing-group reveal-ready" id="pricing-camera">
+          <div class="pricing-group-title">
+            <span>04</span>
+            <div><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-compact">
+            <article class="pricing-card compact"><p class="pricing-kicker">Photography</p><h3>Portrait Session</h3><p class="pricing-price"><span>$</span>450<small>from</small></p><p class="pricing-summary">Clean, intentional imagery for your personal or artist brand.</p><ul><li>Up to 90-minute session</li><li>10 professionally edited images</li><li>1 location &amp; 2 looks</li></ul><a class="button pricing-button" href="#contact">Book a Session</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Product &amp; campaign</p><h3>Brand Photo Set</h3><p class="pricing-price"><span>$</span>750<small>from</small></p><p class="pricing-summary">A cohesive image library for launches, web, and social.</p><ul><li>20 edited campaign images</li><li>Product or lifestyle direction</li><li>Web &amp; social exports</li></ul><a class="button pricing-button" href="#contact">Shoot My Campaign</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Videography</p><h3>Brand Shoot Day</h3><p class="pricing-price"><span>$</span>1,200<small>from</small></p><p class="pricing-summary">Capture premium footage built around your content goals.</p><ul><li>Up to 4 hours on location</li><li>Creative shot list</li><li>1 hero edit + 3 social clips</li></ul><a class="button pricing-button" href="#contact">Plan My Shoot</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Live coverage</p><h3>Event Highlight</h3><p class="pricing-price"><span>$</span>1,350<small>from</small></p><p class="pricing-summary">Preserve the energy of your event in a cinematic recap.</p><ul><li>Up to 4 hours coverage</li><li>60&ndash;90 second highlight</li><li>2 vertical recap clips</li></ul><a class="button pricing-button" href="#contact">Cover My Event</a></article>
+          </div>
+        </div>
+
+        <div class="pricing-group reveal-ready" id="pricing-agencies">
+          <div class="pricing-group-title">
+            <span>05</span>
+            <div><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-partner">
+            <article class="pricing-card"><p class="pricing-kicker">White-label editing</p><h3>Agency Edit Partner</h3><p class="pricing-price"><span>$</span>1,850<small>/ month</small></p><p class="pricing-summary">Reliable post-production delivered inside your agency workflow.</p><div class="scope-tags"><span>White label</span><span>Editing</span></div><ul><li>Up to 12 short-form deliverables</li><li>Branded project workflow</li><li>Priority queue &amp; 2 revisions</li><li>Client-ready exports</li></ul><a class="button pricing-button" href="#contact">Partner With Us</a></article>
+            <article class="pricing-card pricing-card-popular"><span class="popular-badge">Studio partner</span><p class="pricing-kicker">Full creative support</p><h3>Limitless Department</h3><p class="pricing-price"><span>$</span>3,950<small>/ month</small></p><p class="pricing-summary">Production and post support without building an in-house team.</p><div class="scope-tags"><span>Production</span><span>Post</span><span>Strategy</span></div><ul><li>Monthly production day</li><li>16 short-form deliverables</li><li>2 premium campaign edits</li><li>Creative planning &amp; priority access</li></ul><a class="button pricing-button" href="#contact">Add Limitless to My Team</a></article>
+            <article class="pricing-card"><p class="pricing-kicker">Custom engagement</p><h3>Campaign Partnership</h3><p class="pricing-price pricing-price-custom">Let's talk</p><p class="pricing-summary">For launches requiring a custom crew, scope, or production plan.</p><div class="scope-tags"><span>Custom scope</span><span>Scalable</span></div><ul><li>Creative direction &amp; pre-production</li><li>Photo, video, motion &amp; VFX</li><li>Multi-platform campaign delivery</li><li>Timeline and usage built to fit</li></ul><a class="button pricing-button" href="#contact">Build a Custom Plan</a></article>
+          </div>
+        </div>
+
         <div class="pricing-note reveal-ready">
-          <p><strong>Need something custom?</strong> Event coverage, photography, animation, VFX, rush delivery, raw footage, and additional revisions can be quoted around your exact scope.</p>
+          <p><strong>Every vision is different.</strong> Final quotes depend on shoot length, locations, crew, travel, footage volume, animation complexity, usage, and turnaround. A 50% booking deposit reserves production dates; custom scopes are always available.</p>
           <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Custom%20Creative%20Quote">Get a custom quote</a>
         </div>
       </section>
