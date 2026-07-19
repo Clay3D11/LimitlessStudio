@@ -229,6 +229,13 @@ h2 {
   color: var(--cyan);
 }
 
+#services .service-guarantees span {
+  margin: 0;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: .66rem;
+}
+
 #services .service-card h3 { margin: 0 0 14px; }
 #services .service-card ul { margin: 0; padding: 0; color: var(--muted); list-style: none; }
 
@@ -334,4 +341,46 @@ h2 {
   .studio-notes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  #services .service-card {
+    min-height: 205px;
+    height: 100%;
+    padding: 17px 9px;
+  }
+
+  #process .process-card {
+    min-height: 205px;
+    height: 100%;
+    padding: 17px 9px;
+  }
+
+  #services .service-card span,
+  #process .process-card span {
+    margin-bottom: 6px;
+    padding: 2px 6px;
+  }
+
+  #services .service-card h3,
+  #process .process-card h3 {
+    font-size: .95rem;
+  }
+
+  #services .service-card h3,
+  #process .process-card h3 { margin-bottom: 10px; }
+
+  #services .service-card ul,
+  #process .process-card ul {
+    display: grid;
+    gap: 6px;
+    padding-block: 4px;
+  }
+
+  #services .service-card li,
+  #process .process-card li {
+    font-size: .78rem;
+    line-height: 1.5;
+  }
+
+  #services .service-guarantees { gap: 3px; margin-bottom: 8px; }
+  #services .service-guarantees span { margin: 0; padding: 3px 5px; font-size: .58rem; }
 }
