@@ -7,7 +7,7 @@ Static landing page for Limitless Studio, built for video editing, videography, 
 - `index.html` - landing page markup
 - `style.css` - core responsive page styling
 - `luxury.css` - luxury visual polish layer
-- `script.js` - mobile navigation, reveal effects, and autoplay pause/resume
+- `script.js` - navigation, pricing dialogs, project cart, request flow, reveal effects, and video lifecycle
 - `assets/` - local images, icons, and video media
 
 ## Local Preview
@@ -27,4 +27,7 @@ Open `index.html` directly in a browser, or use a simple static server from this
 
 - This page is self-contained.
 - Video files are included locally so the page can run as a static website.
+- All existing pricing cards are progressively connected to a persistent project cart without duplicating price data.
+- The project-request form stores preview submissions locally. Connect it to a secure CRM, email provider, or API before launch.
+- The cart is structured for a future payment checkout; no payment is collected in the current preview.
 - `.nojekyll` is included for GitHub Pages compatibility.
