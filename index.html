@@ -53,6 +53,11 @@
         </details>
         <a href="#contact">Contact</a>
       </nav>
+
+      <button class="studio-cart-button" type="button" aria-label="Open project cart" data-cart-open>
+        <span>Project cart</span>
+        <strong data-cart-count>0</strong>
+      </button>
     </header>
 
     <main id="home">
@@ -805,6 +810,55 @@
         <a class="back-to-top" href="#home">Back to top <span aria-hidden="true">&#8593;</span></a>
       </div>
     </footer>
+
+    <aside class="studio-cart" aria-hidden="true" data-cart-drawer>
+      <div class="studio-cart-backdrop" data-cart-close></div>
+      <div class="studio-cart-panel" role="dialog" aria-modal="true" aria-labelledby="studio-cart-title">
+        <div class="studio-cart-header">
+          <div><p class="eyebrow">Project builder</p><h2 id="studio-cart-title">Your studio project</h2></div>
+          <button type="button" aria-label="Close project cart" data-cart-close>&times;</button>
+        </div>
+        <div class="studio-cart-content" data-cart-content></div>
+        <div class="studio-cart-footer">
+          <div><span>Estimated subtotal</span><strong data-cart-total>$0</strong></div>
+          <small data-cart-custom-note hidden>Custom-scope selections are priced after discovery.</small>
+          <p>Starting prices may change with production length, travel, crew, usage, revisions, and turnaround.</p>
+          <button class="button pricing-button" type="button" data-cart-checkout disabled>Continue to project request</button>
+          <button class="button studio-cart-continue" type="button" data-cart-close>Continue exploring</button>
+        </div>
+      </div>
+    </aside>
+
+    <dialog class="studio-request-dialog" data-request-dialog aria-labelledby="studio-request-title">
+      <button class="studio-request-close" type="button" aria-label="Close project request" data-request-close>&times;</button>
+      <div class="studio-request-intro">
+        <p class="eyebrow">Start production</p>
+        <h2 id="studio-request-title">Tell us about your project.</h2>
+        <p>Your selected services are already attached. Share the essentials and we&rsquo;ll confirm the scope, schedule, and final investment.</p>
+      </div>
+      <form class="studio-request-form" data-request-form novalidate>
+        <input type="hidden" name="selectedServices" data-selected-services />
+        <div class="studio-field-row">
+          <label>First name<input type="text" name="firstName" autocomplete="given-name" required /></label>
+          <label>Last name<input type="text" name="lastName" autocomplete="family-name" required /></label>
+        </div>
+        <div class="studio-field-row">
+          <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+          <label>Phone<input type="tel" name="phone" autocomplete="tel" /></label>
+        </div>
+        <div class="studio-field-row">
+          <label>Project type<select name="projectType" required><option value="">Choose one</option><option>Brand or commercial</option><option>Music or artist visual</option><option>Real estate</option><option>Social content</option><option>Photography</option><option>Agency partnership</option><option>Other</option></select></label>
+          <label>Ideal start<select name="timeline" required><option value="">Choose timeline</option><option>As soon as possible</option><option>Within 30 days</option><option>1&ndash;3 months</option><option>Planning ahead</option></select></label>
+        </div>
+        <label>Project details<textarea name="details" rows="5" required placeholder="Goals, deliverables, locations, deadline, platform, and creative direction..."></textarea></label>
+        <label class="studio-consent"><input type="checkbox" name="consent" required /><span>I agree to be contacted about this project.</span></label>
+        <button class="button pricing-button" type="submit">Submit project request</button>
+        <small>No payment is collected in this preview.</small>
+      </form>
+      <div class="studio-request-success" data-request-success hidden><span>&check;</span><h2>Project request prepared.</h2><p>This preview saved your request locally. Connect the form to your CRM or email provider before launch to receive live submissions.</p><button class="button pricing-button" type="button" data-request-close>Done</button></div>
+    </dialog>
+
+    <div class="studio-toast" role="status" aria-live="polite" data-studio-toast></div>
 
     <script src="script.js"></script>
   </body>
