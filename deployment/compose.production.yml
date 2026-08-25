@@ -1,0 +1,108 @@
+name: limitless-visual
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN}
+      ACME_EMAIL: ${ACME_EMAIL}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      web:
+        condition: service_healthy
+    networks:
+      - edge
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    init: true
+    env_file:
+      - .env.production
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      DB_HOST: db
+    expose:
+      - "4175"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - edge
+      - backend
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:4175/api/health
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ../database/001_initial_schema.sql:/docker-entrypoint-initdb.d/001_initial_schema.sql:ro
+    networks:
+      - backend
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - mysqladmin ping -h localhost -uroot -p"$${MYSQL_ROOT_PASSWORD}"
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  edge:
+  backend:
+    internal: true
+
+volumes:
+  mysql_data:
+  caddy_data:
+  caddy_config:

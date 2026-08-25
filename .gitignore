@@ -1,3 +1,6 @@
 data/
 .env
 *.log
+/deployment/.env.production
+/deployment/backups/
+!/deployment/.env.production.example

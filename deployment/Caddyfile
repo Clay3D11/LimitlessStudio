@@ -1,0 +1,21 @@
+{
+	email {$ACME_EMAIL}
+}
+
+{$SITE_DOMAIN} {
+	encode zstd gzip
+
+	reverse_proxy web:4175
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}
