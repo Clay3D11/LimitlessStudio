@@ -1,0 +1,32 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      DB_HOST: db
+    ports: ["4175:4175"]
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: limitless_visual
+      MYSQL_USER: limitless
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/001_initial_schema.sql:/docker-entrypoint-initdb.d/001_initial_schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  mysql_data:
