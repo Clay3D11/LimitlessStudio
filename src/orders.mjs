@@ -17,19 +17,67 @@ export async function markOrderPaid(session) {
   await database().execute(`UPDATE orders SET status='paid',stripe_payment_intent_id=?,stripe_customer_id=?,paid_at=COALESCE(paid_at,CURRENT_TIMESTAMP) WHERE id=? AND status<>'paid'`,[typeof session.payment_intent==='string'?session.payment_intent:null,typeof session.customer==='string'?session.customer:null,orderId]);
 }
 export async function markOrderFailed(session) { const id=session.metadata?.order_id; if(id) await database().execute("UPDATE orders SET status='payment_failed' WHERE id=? AND status='pending'",[id]); }
+
+
+
+export function checkoutEventPaymentSucceeded(event) {
+  const session = event?.data?.object;
+
+  return (
+    event?.type === 'checkout.session.async_payment_succeeded' ||
+    (
+      event?.type === 'checkout.session.completed' &&
+      ['paid', 'no_payment_required'].includes(session?.payment_status)
+    )
+  );
+}
+
 export async function processStripeEvent(event) {
-  return transaction(async(connection)=>{
-    const [claim]=await connection.execute('INSERT IGNORE INTO stripe_events (event_id,event_type) VALUES (?,?)',[event.id,event.type]);
-    if(claim.affectedRows===0) return false;
-    const session=event.data.object; const orderId=session.metadata?.order_id;
-    if(!orderId) return true;
-    if(event.type==='checkout.session.completed'||event.type==='checkout.session.async_payment_succeeded') {
-      await connection.execute(`UPDATE orders SET status='paid',stripe_payment_intent_id=?,stripe_customer_id=?,paid_at=COALESCE(paid_at,CURRENT_TIMESTAMP) WHERE id=? AND status<>'paid'`,[typeof session.payment_intent==='string'?session.payment_intent:null,typeof session.customer==='string'?session.customer:null,orderId]);
+  return transaction(async (connection) => {
+    const [claim] = await connection.execute(
+      'INSERT IGNORE INTO stripe_events (event_id,event_type) VALUES (?,?)',
+      [event.id, event.type]
+    );
+
+    if (claim.affectedRows === 0) return false;
+
+    const session = event.data.object;
+    const orderId = session.metadata?.order_id;
+
+    if (!orderId) return true;
+
+    if (checkoutEventPaymentSucceeded(event)) {
+      await connection.execute(
+        `UPDATE orders
+         SET status='paid',
+             stripe_payment_intent_id=?,
+             stripe_customer_id=?,
+             paid_at=COALESCE(paid_at,CURRENT_TIMESTAMP)
+         WHERE id=? AND status<>'paid'`,
+        [
+          typeof session.payment_intent === 'string'
+            ? session.payment_intent
+            : null,
+          typeof session.customer === 'string'
+            ? session.customer
+            : null,
+          orderId
+        ]
+      );
     }
-    if(event.type==='checkout.session.async_payment_failed') await connection.execute("UPDATE orders SET status='payment_failed' WHERE id=? AND status='pending'",[orderId]);
+
+    if (event.type === 'checkout.session.async_payment_failed') {
+      await connection.execute(
+        "UPDATE orders SET status='payment_failed' WHERE id=? AND status='pending'",
+        [orderId]
+      );
+    }
+
     return true;
   });
 }
+
+
 export async function saveInquiry(customer,selectedServices,userAgent) {
   const id=randomUUID(); await database().execute(`INSERT INTO inquiries (id,first_name,last_name,email,phone,project_type,timeline,details,selected_services,user_agent) VALUES (?,?,?,?,?,?,?,?,?,?)`,[id,customer.firstName,customer.lastName,customer.email,customer.phone||null,customer.projectType,customer.timeline,customer.details,selectedServices||'',userAgent||'']); return id;
 }

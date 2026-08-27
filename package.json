@@ -8,7 +8,7 @@
   "dev": "node --watch server.mjs",
   "migrate": "node database/migrate.mjs",
   "check": "node --check server.mjs && node --check script.js && node --check src/app.mjs && node --check database/migrate.mjs",
-  "test": "node test/catalog.test.mjs && node test/validation.test.mjs"
+  "test": "node test/catalog.test.mjs && node test/validation.test.mjs && node test/orders.test.mjs"
 },
   "engines": {
     "node": ">=18"
