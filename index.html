@@ -823,7 +823,7 @@
           <div><span>Estimated subtotal</span><strong data-cart-total>$0</strong></div>
           <small data-cart-custom-note hidden>Custom-scope selections are priced after discovery.</small>
           <p>Starting prices may change with production length, travel, crew, usage, revisions, and turnaround.</p>
-          <button class="button pricing-button" type="button" data-cart-checkout disabled>Continue to project request</button>
+          <button class="button pricing-button" type="button" data-cart-checkout disabled>Continue to checkout</button>
           <button class="button studio-cart-continue" type="button" data-cart-close>Continue exploring</button>
         </div>
       </div>
@@ -834,10 +834,11 @@
       <div class="studio-request-intro">
         <p class="eyebrow">Start production</p>
         <h2 id="studio-request-title">Tell us about your project.</h2>
-        <p>Your selected services are already attached. Share the essentials and we&rsquo;ll confirm the scope, schedule, and final investment.</p>
+        <p>Your selected services are attached. Share the project essentials, then continue to secure Stripe checkout or request a custom quote.</p>
       </div>
       <form class="studio-request-form" data-request-form novalidate>
         <input type="hidden" name="selectedServices" data-selected-services />
+        <label class="studio-honeypot" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
         <div class="studio-field-row">
           <label>First name<input type="text" name="firstName" autocomplete="given-name" required /></label>
           <label>Last name<input type="text" name="lastName" autocomplete="family-name" required /></label>
@@ -852,10 +853,10 @@
         </div>
         <label>Project details<textarea name="details" rows="5" required placeholder="Goals, deliverables, locations, deadline, platform, and creative direction..."></textarea></label>
         <label class="studio-consent"><input type="checkbox" name="consent" required /><span>I agree to be contacted about this project.</span></label>
-        <button class="button pricing-button" type="submit">Submit project request</button>
-        <small>No payment is collected in this preview.</small>
+        <button class="button pricing-button" type="submit" data-request-submit>Continue to secure payment</button>
+        <small data-request-status role="status" aria-live="polite">Payment is securely processed by Stripe.</small>
       </form>
-      <div class="studio-request-success" data-request-success hidden><span>&check;</span><h2>Project request prepared.</h2><p>This preview saved your request locally. Connect the form to your CRM or email provider before launch to receive live submissions.</p><button class="button pricing-button" type="button" data-request-close>Done</button></div>
+      <div class="studio-request-success" data-request-success hidden><span>&check;</span><h2>Project request received.</h2><p>Thank you. The studio will review your project details and follow up with you.</p><button class="button pricing-button" type="button" data-request-close>Done</button></div>
     </dialog>
 
     <div class="studio-toast" role="status" aria-live="polite" data-studio-toast></div>

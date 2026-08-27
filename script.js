@@ -184,7 +184,8 @@ function packageData(card, index) {
   const category = $('.pricing-group-title .eyebrow', categoryDialog)?.textContent.trim() || 'Studio service';
   const billing = $('small', priceElement)?.textContent.trim() || 'project';
   const id = `${categoryDialog?.id || 'pricing'}-${name}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  return { id, name, category, billing, price: priceMatch ? Number(priceMatch[0]) : null, quantity: 1 };
+  const mode = priceMatch ? (billing.toLowerCase().includes('month') ? 'subscription' : 'payment') : 'quote';
+  return { id, name, category, billing, price: priceMatch ? Number(priceMatch[0]) : null, mode, quantity: 1 };
 }
 
 function enhancePricingCards() {
@@ -208,6 +209,11 @@ function enhancePricingCards() {
 }
 
 function addStudioItem(item) {
+  const incompatible = studioCart.some((entry) => entry.mode !== item.mode);
+  if (incompatible) {
+    showStudioToast('Monthly, one-time, and custom services must be checked out separately.');
+    return;
+  }
   const existing = studioCart.find((entry) => entry.id === item.id);
   if (existing) existing.quantity += 1;
   else studioCart.push({ ...item });
@@ -275,6 +281,11 @@ function openRequestDialog() {
     const amount = item.price === null ? 'custom quote' : currency.format(item.price * item.quantity);
     return `${item.name} × ${item.quantity} (${amount})`;
   }).join(' | ');
+  const isQuote = studioCart.some((item) => item.price === null);
+  $('[data-request-submit]', requestForm).textContent = isQuote ? 'Submit quote request' : 'Continue to secure payment';
+  $('[data-request-status]', requestForm).textContent = isQuote
+    ? 'No payment is collected for a custom quote request.'
+    : 'You will continue to Stripe to complete secure payment.';
   requestDialog.showModal();
   document.body.classList.add('cart-open');
   requestAnimationFrame(() => requestForm.elements.firstName.focus());
@@ -296,7 +307,7 @@ requestDialog?.addEventListener('cancel', (event) => {
   closeRequestDialog();
 });
 
-requestForm?.addEventListener('submit', (event) => {
+requestForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   const fields = $$('input, select, textarea', requestForm).filter((field) => field.type !== 'hidden');
   fields.forEach((field) => field.setAttribute('aria-invalid', String(!field.checkValidity())));
@@ -307,14 +318,46 @@ requestForm?.addEventListener('submit', (event) => {
     return;
   }
 
+  const submitButton = $('[data-request-submit]', requestForm);
+  const status = $('[data-request-status]', requestForm);
   const request = Object.fromEntries(new FormData(requestForm));
-  localStorage.setItem('limitless-studio-latest-request', JSON.stringify({ ...request, submittedAt: new Date().toISOString() }));
-  requestForm.hidden = true;
-  $('.studio-request-intro', requestDialog).hidden = true;
-  requestSuccess.hidden = false;
-  studioCart = [];
-  saveStudioCart();
-  renderStudioCart();
+  submitButton.disabled = true;
+  const isQuote = studioCart.some((item) => item.price === null);
+  submitButton.textContent = isQuote ? 'Sending request...' : 'Creating secure checkout...';
+  status.textContent = isQuote ? 'Securely submitting your project details.' : 'Connecting securely to Stripe.';
+
+  try {
+    const endpoint = isQuote ? '/api/inquiries' : '/api/checkout/sessions';
+    const payload = isQuote ? request : {
+      ...request,
+      items: studioCart.map(({ id, quantity }) => ({ id, quantity }))
+    };
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.error || 'Your request could not be submitted.');
+
+    if (!isQuote && result.checkoutUrl) {
+      window.location.assign(result.checkoutUrl);
+      return;
+    }
+
+    requestForm.hidden = true;
+    $('.studio-request-intro', requestDialog).hidden = true;
+    requestSuccess.hidden = false;
+    studioCart = [];
+    saveStudioCart();
+    renderStudioCart();
+  } catch (error) {
+    status.textContent = error.message || 'Your request could not be submitted. Please try again.';
+    showStudioToast(status.textContent);
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = studioCart.some((item) => item.price === null) ? 'Submit quote request' : 'Continue to secure payment';
+  }
 });
 
 requestDialog?.addEventListener('close', () => {
@@ -324,6 +367,7 @@ requestDialog?.addEventListener('close', () => {
     requestForm.hidden = false;
     $('.studio-request-intro', requestDialog).hidden = false;
     requestSuccess.hidden = true;
+    $('[data-request-status]', requestForm).textContent = 'Choose a package to continue.';
     $$('[aria-invalid]', requestForm).forEach((field) => field.removeAttribute('aria-invalid'));
   }, 180);
 });
@@ -341,3 +385,28 @@ document.addEventListener('keydown', (event) => {
 
 enhancePricingCards();
 renderStudioCart();
+
+async function showCheckoutResult() {
+  const parameters = new URLSearchParams(window.location.search);
+  const checkout = parameters.get('checkout');
+  if (checkout === 'cancelled') {
+    showStudioToast('Checkout was cancelled. Your cart is still saved.');
+    return;
+  }
+  if (checkout !== 'success') return;
+  const sessionId = parameters.get('session_id');
+  studioCart = [];
+  saveStudioCart();
+  renderStudioCart();
+  showStudioToast('Payment received. Thank you for choosing Limitless Studio.');
+  if (!sessionId) return;
+  try {
+    const response = await fetch(`/api/orders/status?session_id=${encodeURIComponent(sessionId)}`);
+    const result = await response.json();
+    if (result.order?.status === 'paid') showStudioToast('Payment confirmed. We will contact you about production next.');
+  } catch {
+    // Stripe remains the source of payment confirmation if status polling is unavailable.
+  }
+}
+
+showCheckoutResult();

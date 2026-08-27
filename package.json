@@ -1,0 +1,24 @@
+{
+  "name": "limitless-visual",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Limitless Visual website and project inquiry API",
+  "scripts": {
+  "start": "node database/migrate.mjs && node server.mjs",
+  "dev": "node --watch server.mjs",
+  "migrate": "node database/migrate.mjs",
+  "check": "node --check server.mjs && node --check script.js && node --check src/app.mjs && node --check database/migrate.mjs",
+  "test": "node test/catalog.test.mjs && node test/validation.test.mjs"
+},
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "mysql2": "^3.23.4",
+    "stripe": "^22.5.0"
+  }
+}

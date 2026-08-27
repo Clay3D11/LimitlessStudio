@@ -1095,3 +1095,11 @@ h3 {
     gap: 16px;
   }
 }
+/* Spam-trap field: available to bots, intentionally invisible to visitors. */
+.studio-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
