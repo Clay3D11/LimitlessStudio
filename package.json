@@ -4,11 +4,12 @@
   "private": true,
   "description": "Limitless Visual website and project inquiry API",
   "scripts": {
-    "start": "node server.mjs",
-    "dev": "node --watch server.mjs",
-    "check": "node --check server.mjs && node --check script.js && node --check src/app.mjs",
-    "test": "node test/catalog.test.mjs && node test/validation.test.mjs"
-  },
+  "start": "node database/migrate.mjs && node server.mjs",
+  "dev": "node --watch server.mjs",
+  "migrate": "node database/migrate.mjs",
+  "check": "node --check server.mjs && node --check script.js && node --check src/app.mjs && node --check database/migrate.mjs",
+  "test": "node test/catalog.test.mjs && node test/validation.test.mjs"
+},
   "engines": {
     "node": ">=18"
   },

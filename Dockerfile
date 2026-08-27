@@ -20,4 +20,4 @@ USER node
 
 EXPOSE 4175
 
-CMD ["node", "server.mjs"]
+CMD ["sh", "-c", "node database/migrate.mjs && exec node server.mjs"]
