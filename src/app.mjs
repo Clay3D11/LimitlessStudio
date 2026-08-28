@@ -12,7 +12,35 @@ const apiLimiter=rateLimit({windowMs:15*60*1000,limit:100,standardHeaders:'draft
 const checkoutLimiter=rateLimit({windowMs:15*60*1000,limit:20,standardHeaders:'draft-8',legacyHeaders:false});
 export function createApp() {
   const app=express(); app.disable('x-powered-by'); if(config.isProduction) app.set('trust proxy',1);
-  app.use(helmet({contentSecurityPolicy:false,crossOriginResourcePolicy:{policy:'cross-origin'}}));
+
+
+
+  app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        baseUri: ["'self'"],
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        formAction: ["'self'"],
+        frameAncestors: ["'none'"],
+        imgSrc: ["'self'", 'data:'],
+        mediaSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        scriptSrc: ["'self'"],
+        scriptSrcAttr: ["'none'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        upgradeInsecureRequests: config.isProduction ? [] : null
+      }
+    },
+    crossOriginResourcePolicy: {
+      policy: 'cross-origin'
+    }
+  })
+);
+
+
   app.post('/api/webhooks/stripe',express.raw({type:'application/json',limit:'1mb'}),async(request,response,next)=>{
     try { const event=constructWebhookEvent(request.body,request.headers['stripe-signature']);
       if(['checkout.session.completed','checkout.session.async_payment_succeeded','checkout.session.async_payment_failed'].includes(event.type)) await processStripeEvent(event);
