@@ -22,15 +22,15 @@ const products = [
   ['pricing-artists-artist-premiere','Artist Premiere','Exclusively for artists',250000,'payment'],
   ['pricing-realtors-listing-edit','Listing Edit','Exclusively for realtors',29900,'payment'],
   ['pricing-realtors-listing-complete','Listing Complete','Exclusively for realtors',50000,'payment']
-].map(([id,name,category,unitAmount,mode]) => Object.freeze({id,name,category,unitAmount,mode,currency:'usd',active:true}));
+].map(([id,name,category,unitAmount,mode]) => Object.freeze({id,name,category,unitAmount,mode,currency:'usd',active:mode!=='subscription'}));
 export const catalog = Object.freeze(products);
 export const catalogById = new Map(catalog.map((product) => [product.id, product]));
-export function publicCatalog() { return catalog.map(({unitAmount,...product}) => ({...product,price:unitAmount/100})); }
+export function publicCatalog() { return catalog.filter(({active})=>active).map(({unitAmount,...product}) => ({...product,price:unitAmount/100})); }
 export function resolveCart(items) {
   if (!Array.isArray(items) || items.length < 1 || items.length > 20) throw Object.assign(new Error('Choose between 1 and 20 cart items.'),{statusCode:422});
   const resolved = items.map((item) => {
     const product = catalogById.get(String(item.id || '')); const quantity = Number(item.quantity);
-    if (!product || !Number.isInteger(quantity) || quantity < 1 || quantity > 10) throw Object.assign(new Error('The cart contains an invalid product or quantity.'),{statusCode:422});
+    if (!product || !product.active || !Number.isInteger(quantity) || quantity < 1 || quantity > 10) throw Object.assign(new Error('The cart contains an unavailable product or invalid quantity.'),{statusCode:422});
     return {...product,quantity};
   });
   const modes = new Set(resolved.map((item) => item.mode));

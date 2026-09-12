@@ -159,7 +159,7 @@ let toastTimeout;
 function readStudioCart() {
   try {
     const saved = JSON.parse(localStorage.getItem('limitless-studio-cart'));
-    return Array.isArray(saved) ? saved.map((item) => ({ ...item, quantity: Number(item.quantity) || 1 })) : [];
+    return Array.isArray(saved) ? saved.filter((item) => item.mode !== 'subscription').map((item) => ({ ...item, quantity: Number(item.quantity) || 1 })) : [];
   } catch {
     return [];
   }
@@ -209,6 +209,10 @@ function enhancePricingCards() {
 }
 
 function addStudioItem(item) {
+  if (item.mode === 'subscription') {
+    showStudioToast('Monthly plans are temporarily unavailable. Contact us for a custom engagement.');
+    return;
+  }
   const incompatible = studioCart.some((entry) => entry.mode !== item.mode);
   if (incompatible) {
     showStudioToast('Monthly, one-time, and custom services must be checked out separately.');
