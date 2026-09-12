@@ -2,6 +2,7 @@ import express from 'express';
 import helmet from 'helmet';
 import { rateLimit } from 'express-rate-limit';
 import { config } from './config.mjs';
+import { isStripeError,publicErrorMessage } from './errors.mjs';
 import { publicCatalog,resolveCart } from './catalog.mjs';
 import { pingDatabase } from './db.mjs';
 import { attachStripeSession,createPendingOrder,orderStatus,processStripeEvent,saveInquiry } from './orders.mjs';
@@ -61,6 +62,6 @@ export function createApp() {
   });
   app.use(express.static(config.projectRoot,{dotfiles:'deny',index:'index.html',extensions:['html'],setHeaders(response){response.setHeader('X-Content-Type-Options','nosniff');}}));
   app.use('/api',(_request,response)=>response.status(404).json({error:'API route not found.'}));
-  app.use((error,_request,response,_next)=>{const status=Number(error.statusCode||error.status||500);if(status>=500)console.error(error);response.status(status).json({error:status>=500?'Unable to process the request.':error.message,...(error.fields?{fields:error.fields}:{})});});
+  app.use((error,request,response,_next)=>{const status=Number(error.statusCode||error.status||500);if(status>=500||isStripeError(error))console.error(error);response.status(status).json({error:publicErrorMessage(error,status,request.path),...(!isStripeError(error)&&error.fields?{fields:error.fields}:{})});});
   return app;
 }
