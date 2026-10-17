@@ -1388,18 +1388,6 @@ h2 em {
   margin-top: 32px;
 }
 
-.contact-support {
-  display: inline-block;
-  margin-top: 22px;
-  color: var(--subtle);
-  font-size: .82rem;
-  transition: color var(--fast) ease;
-}
-
-.contact-support:hover {
-  color: var(--champagne);
-}
-
 @media (max-width: 480px) {
   .contact-actions .button {
     width: 100%;
