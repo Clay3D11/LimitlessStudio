@@ -3,30 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Limitless Studio | Video, Ads &amp; Real Estate Media</title>
     <meta
       name="description"
-      content="Limitless Studio video editing landing page for music videos, real estate visuals, promotional ads, effects, animations, and transitions."
+      content="Limitless Studio is a creative marketing agency producing music videos, real estate visuals, high-converting ads, social reels, and photography that turn attention into revenue."
+    />
+    <meta name="theme-color" content="#07070a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Limitless Studio | Content that turns attention into revenue" />
+    <meta
+      property="og:description"
+      content="Cinematic video, ads, photography, and real estate media for brands, realtors, artists, and agencies."
     />
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="luxury.css" />
   </head>
   <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- ============ Header ============ -->
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Limitless Studio home">
         <span>CV7</span>
         <strong>Limitless Studio</strong>
       </a>
 
-      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#">Home</a>
+        <a href="#home">Home</a>
         <a class="about-studio-tag" href="#studio">About</a>
-        
         <details class="nav-dropdown">
           <summary>Studio</summary>
           <div>
@@ -34,7 +38,8 @@
             <a href="#work">Selected Work</a>
             <a href="#showcase">Showcase</a>
             <a href="#packages">Studio Offers</a>
-            <a href="#effects">Effects</a></div>
+            <a href="#effects">Effects</a>
+          </div>
         </details>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
@@ -43,8 +48,8 @@
           <div>
             <a href="#pricing">Pricing Overview</a>
             <a href="#pricing-monthly" hidden>Monthly Content</a>
-            <a href="#pricing-realtors">Exclusively for Realtors</a>
-            <a href="#pricing-artists">Exclusively for Artists</a>
+            <a href="#pricing-realtors">Realtors</a>
+            <a href="#pricing-artists">Artists</a>
             <a href="#pricing-editing">One-Off Editing</a>
             <a href="#pricing-campaigns">Campaigns &amp; Production</a>
             <a href="#pricing-camera">Camera &amp; Studio</a>
@@ -54,464 +59,254 @@
         <a href="#contact">Contact</a>
       </nav>
 
+      <a class="button primary header-cta" href="#pricing">Start a project</a>
+
       <button class="studio-cart-button" type="button" aria-label="Open project cart" data-cart-open>
         <span>Project cart</span>
         <strong data-cart-count>0</strong>
       </button>
+
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     <main id="home">
-
-
+      <!-- ============ Hero ============ -->
       <section class="hero-section">
         <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
-          <source src="assets/videos/GlithPack.mp4" type="video/mp4" />
+          <source src="assets/videos/BookerTcom.mp4" type="video/mp4" />
         </video>
         <div class="hero-scrim" aria-hidden="true"></div>
 
-        <div class="hero-content reveal-ready">
-          <p class="eyebrow">Video editing, videography, photography, and cinematic content</p>
-          <h1>Limitless</h1>
+        <div class="hero-content">
+          <div class="hero-copy reveal-ready">
+            <p class="eyebrow">Limitless Studio &middot; Creative marketing agency</p>
+            <h1>Content that turns attention into <em>revenue.</em></h1>
+            <p class="hero-lead">
+              Cinematic video, high-converting ads, photography, and real estate media for brands,
+              realtors, artists, and agencies &mdash; shot, edited, and delivered ready to publish.
+            </p>
 
-          <article class="feature-video reveal-ready">
+            <div class="hero-actions">
+              <a class="button primary" href="#pricing">See packages &amp; pricing</a>
+              <a class="button secondary" href="#work"><span aria-hidden="true">&#9654;</span> Watch the showreel</a>
+            </div>
+
+            <div class="hero-tags">
+              <!-- script.js binds the first .studio-info-tag to the info dialog -->
+              <button class="studio-info-tag" type="button" aria-haspopup="dialog" aria-controls="studio-info-dialog">
+                <span aria-hidden="true">+</span> What is Limitless Studio?
+              </button>
+              <button class="studio-info-tag about-studio-tag" type="button" aria-haspopup="dialog" aria-controls="studio">
+                <span aria-hidden="true">+</span> About the studio
+              </button>
+            </div>
+
+            <ul class="hero-proof" aria-label="Why clients choose us">
+              <li>4K delivery</li>
+              <li>Fast turnaround</li>
+              <li>Secure Stripe checkout</li>
+            </ul>
+          </div>
+
+          <figure class="hero-reel reveal-ready">
             <video src="assets/videos/BookerTcom.mp4" controls autoplay muted loop playsinline></video>
-          </article>
-
-          <button
-            class="studio-info-tag"
-            type="button"
-            aria-haspopup="dialog"
-            aria-controls="studio-info-dialog"
-          >
-            <span aria-hidden="true">+</span> What is Limitless Studio?
-          </button>
-
-          <button class="studio-info-tag about-studio-tag" type="button" aria-haspopup="dialog" aria-controls="studio">
-            <span aria-hidden="true">+</span> About Limitless Studio
-          </button>
-
-          <a class="studio-info-tag" href="#contact"><span aria-hidden="true">+</span> Contact</a>
-
-          <dialog class="studio-info-dialog" id="studio-info-dialog" aria-labelledby="studio-info-title">
-            <div class="studio-info-card">
-              <button class="studio-info-close" type="button" aria-label="Close studio information">&times;</button>
-              <p class="eyebrow">About the studio</p>
-              <h2 id="studio-info-title">Limitless Studio</h2>
-              <p><a href="https://clay3d11.github.io/LimitlessStudio-VideoShowcase/" aria-label="View Limitless Studio project">Limitless Studio</a>
-                
-                A creative marketing agency producing polished video edits, music videos, high-converting ads, social media reels, photography campaigns, and premium real estate visuals designed to capture attention, strengthen brands, and drive results.
-              </p>
-              <p>We help brands turn content into attention, leads, and revenue.</p>
-              <ul class="studio-info-list">
-                <li><strong>Agencies</strong> — Premium creative production that helps you deliver standout campaigns for your clients. (Monthly subs - All Inclusive)</li>
-                <li><strong>Realtors</strong> — Cinematic property showcases that attract buyers and elevate listings.</li>
-                <li><strong>Brands</strong> — Polished ads and social content built to turn attention into revenue.</li>
-                <li><strong>Music Artists</strong> — Music videos and visual campaigns that bring your sound to life.</li>
-              </ul>
-            </div>
-          </dialog>
-
-          <dialog class="studio-info-dialog" id="studio" aria-labelledby="about-studio-title">
-            <div class="studio-info-card">
-              <button class="studio-info-close about-studio-close" type="button" aria-label="Close about section">&times;</button>
-              <div class="intro-section">
-                <div class="section-heading">
-                  <p class="eyebrow">About Limitless Studio</p>
-                  <h2 id="about-studio-title">A full creative studio presence.</h2>
-                </div>
-                <div class="intro-grid">
-                  <p class="lead">Limitless Visual is a creative marketing agency helping brands turn attention into impact. We combine cinematic production, strategic storytelling, and digital branding to create content that drives visibility, engagement, and growth. From music videos and commercial campaigns to real estate media, promotional content, and social-first visuals, every project is crafted with intention, precision, and purpose.</p>
-                  <div class="studio-mark" aria-label="Studio values">
-                    <img src="assets/img/icons/react.png" alt="Limitless Studio visual mark" />
-                    <div class="studio-notes"><span>Direction</span><span>Shooting</span><span>Editing</span><span>Delivery</span></div>
-                  </div>
-                </div>
-              </div>
-              <div class="hero-panel" aria-label="Studio highlights">
-                <div>
-                  <strong>Luxury Real Estate Marketing</strong>
-                  <span>Cinematic property tours, scroll-stopping social media reels, aerial drone showcases, and premium branded content crafted to attract buyers, impress sellers, and elevate your real estate brand.</span>
-                  <span><ul style="list-style: none;"><li>✓ Luxury Listing Videos</li><li>✓ Social Media Reels</li><li>✓ Drone Cinematics</li><li>✓ Property Walkthroughs</li><li>✓ Agent Branding</li><li>✓ Motion Graphics</li><li>✓ Fast Turnaround</li><li>✓ 4K Delivery</li></ul></span>
-                </div>
-                <div>
-                  <strong>Ads &amp; Campaigns</strong>
-                  <span>Scroll-stopping short-form ads, branded campaigns, product promos, and social-first content crafted to capture attention, connect with customers, and drive results for your brand.</span>
-                  <span><ul style="list-style: none;"><li>✓ Short-Form Video Ads</li><li>✓ Social Media Campaigns</li><li>✓ Product Promos</li><li>✓ Brand Launch Videos</li><li>✓ Motion Graphics</li><li>✓ Promotional Reels</li><li>✓ Fast Turnaround</li><li>✓ 4K Delivery</li></ul></span>
-                </div>
-                <div>
-                  <strong>Music Videos</strong>
-                  <span>Cinematic music videos, performance edits, visual storytelling, and artist-focused content crafted to match your sound, strengthen your identity, and keep your audience watching.</span>
-                  <span><ul style="list-style: none;"><li>✓ Performance Video Edits</li><li>✓ Beat-Synced Cuts</li><li>✓ Cinematic Color Grading</li><li>✓ Visual Effects &amp; VFX</li><li>✓ Motion Graphics</li><li>✓ Artist Branding</li><li>✓ Social Media Versions</li><li>✓ 4K Delivery</li></ul></span>
-                </div>
-              </div>
-            </div>
-          </dialog>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">View Projects</a>
-          </div>
+            <figcaption><span class="live-dot" aria-hidden="true"></span> Latest edit &middot; Limitless Edition</figcaption>
+          </figure>
         </div>
-
-        
-        <br id="aboutthestudio">
-
-        <aside  class="hero-panel reveal-ready" aria-label="Studio highlights">
-          
-
-          <div>
-            <strong>Luxury Real Estate Marketing</strong>
-            
-            <span>
-
-              <ul style="list-style: none;">
-                <li>✓ Luxury Listing Videos</li>
-                <li>✓ Social Media Reels</li>
-                <li>✓ Drone Cinematics</li>
-                <li>✓ Property Walkthroughs</li>
-                <li>✓ Agent Branding</li>
-                <li>✓ Motion Graphics</li>
-                <li>✓ Fast Turnaround</li>
-                <li>✓ 4K Delivery</li>
-              </ul>
-
-            </span>
-            
-            
-          </div>
-          
-          
-          <div>
-            <strong>Ads & Campaigns</strong>
-            
-            <span>
-              <ul style="list-style: none;">
-                <li>✓ Short-Form Video Ads</li>
-                <li>✓ Social Media Campaigns</li>
-                <li>✓ Product Promos</li>
-                <li>✓ Brand Launch Videos</li>
-                <li>✓ Motion Graphics</li>
-                <li>✓ Promotional Reels</li>
-                <li>✓ Fast Turnaround</li>
-                <li>✓ 4K Delivery</li>
-              </ul>
-            </span>
-          </div>
-          
-          
-          <div>
-            <strong>Music Videos</strong>
-           
-            <span>
-              <ul style="list-style: none;">
-                <li>✓ Performance Video Edits</li>
-                <li>✓ Beat-Synced Cuts</li>
-                <li>✓ Cinematic Color Grading</li>
-                <li>✓ Visual Effects & VFX</li>
-                <li>✓ Motion Graphics</li>
-                <li>✓ Artist Branding</li>
-                <li>✓ Social Media Versions</li>
-                <li>✓ 4K Delivery</li>
-              </ul>
-            </span>
-          </div>
-
-        </aside>
-
       </section>
 
-
+      <!-- ============ Trust ============ -->
       <section class="credibility-bar" aria-label="Studio capabilities">
-        <div><strong>4K-Ready</strong><span>Social and Web Delivery</span></div>
-        <div><strong>Studio Style</strong><span>Lighting, Motion, Story Telling</span></div>
-        <div><strong>Fast Edits</strong><span>Clean Review Workflow</span></div>
-        <div><strong>Multi-Format</strong><span>Reels, Ads, Promos, Listings</span></div>
+        <div><strong>4K-Ready</strong><span>Social and web delivery</span></div>
+        <div><strong>Studio Style</strong><span>Lighting, motion, storytelling</span></div>
+        <div><strong>Fast Edits</strong><span>Clean review workflow</span></div>
+        <div><strong>Multi-Format</strong><span>Reels, ads, promos, listings</span></div>
       </section>
-
 
       <section class="studio-strip" aria-label="Creative tools">
-        <img src="assets/img/icons/unrealengine.png" alt="UnrealEngine" />
-        <img src="assets/img/icons/ae.png" alt="After Effects" />
-        <img src="assets/img/icons/pr.png" alt="Premiere Pro" />
-        <img src="assets/img/icons/Blender.png" alt="Blender" />
-        <img src="assets/img/icons/react.png" alt="Blender" />
+        <p>Built with industry-standard tools</p>
+        <div>
+          <img src="assets/img/icons/unrealengine.png" alt="Unreal Engine" loading="lazy" />
+          <img src="assets/img/icons/ae.png" alt="After Effects" loading="lazy" />
+          <img src="assets/img/icons/pr.png" alt="Premiere Pro" loading="lazy" />
+          <img src="assets/img/icons/Blender.png" alt="Blender" loading="lazy" />
+          <img src="assets/img/icons/react.png" alt="React" loading="lazy" />
+        </div>
       </section>
 
+      <!-- ============ Who we serve ============ -->
+      <section class="section" id="solutions">
+        <div class="section-heading reveal-ready">
+          <p class="eyebrow">Who we work with</p>
+          <h2>Built for people who sell with visuals.</h2>
+          <p class="section-intro">Pick your lane and go straight to packages made for it.</p>
+        </div>
 
+        <div class="segment-grid">
+          <article class="segment-card reveal-ready">
+            <p class="eyebrow">Realtors</p>
+            <h3>Luxury Real Estate Marketing</h3>
+            <p>Cinematic property tours, scroll-stopping reels, and drone showcases that attract buyers and elevate listings.</p>
+            <ul class="check-list">
+              <li>Luxury listing videos</li>
+              <li>Drone cinematics</li>
+              <li>Property walkthroughs</li>
+              <li>Agent branding</li>
+            </ul>
+            <p class="segment-price">From <strong>$299</strong></p>
+            <button class="button primary" type="button" data-pricing-target="pricing-realtors">See realtor packages</button>
+          </article>
+
+          <article class="segment-card reveal-ready">
+            <p class="eyebrow">Brands</p>
+            <h3>Ads &amp; Campaigns</h3>
+            <p>Short-form ads, product promos, and social-first campaigns crafted to capture attention and drive results.</p>
+            <ul class="check-list">
+              <li>Short-form video ads</li>
+              <li>Social media campaigns</li>
+              <li>Product promos</li>
+              <li>Brand launch videos</li>
+            </ul>
+            <p class="segment-price">From <strong>$550</strong></p>
+            <button class="button primary" type="button" data-pricing-target="pricing-campaigns">See campaign packages</button>
+          </article>
+
+          <article class="segment-card reveal-ready">
+            <p class="eyebrow">Artists</p>
+            <h3>Music Videos</h3>
+            <p>Performance edits and visual storytelling crafted to match your sound and keep your audience watching.</p>
+            <ul class="check-list">
+              <li>Beat-synced cuts</li>
+              <li>Cinematic color grading</li>
+              <li>Visual effects &amp; VFX</li>
+              <li>Social media versions</li>
+            </ul>
+            <p class="segment-price">From <strong>$499</strong></p>
+            <button class="button primary" type="button" data-pricing-target="pricing-artists">See artist packages</button>
+          </article>
+
+          <article class="segment-card reveal-ready">
+            <p class="eyebrow">Agencies</p>
+            <h3>Creative Partnerships</h3>
+            <p>Premium production behind your agency, so you deliver standout campaigns without growing your team.</p>
+            <ul class="check-list">
+              <li>Creative direction</li>
+              <li>Photo, video, motion &amp; VFX</li>
+              <li>Multi-platform delivery</li>
+              <li>Custom scope &amp; timeline</li>
+            </ul>
+            <p class="segment-price"><strong>Custom</strong> plan</p>
+            <button class="button primary" type="button" data-pricing-target="pricing-agencies">Build a partnership</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ Explore the studio ============ -->
       <section class="section studio-explore-section" id="studio-explore">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Explore Limitless Studio</p>
           <h2>See the work. Discover the possibilities.</h2>
         </div>
         <div class="studio-category-grid reveal-ready">
-          <button class="studio-category-card" type="button" data-studio-target="work"><span>01</span><p class="eyebrow">Selected work</p><h3>Limitless Studio Showreel</h3><small>Watch the reel &rarr;</small></button>
-          <button class="studio-category-card" type="button" data-studio-target="showcase"><span>02</span><p class="eyebrow">Original vs. Limitless Edition</p><h3>See the Transformation</h3><small>Compare the edits &rarr;</small></button>
-          <button class="studio-category-card" type="button" data-studio-target="packages"><span>03</span><p class="eyebrow">Studio offers</p><h3>Built for Real Projects</h3><small>Explore the offers &rarr;</small></button>
-          <button class="studio-category-card" type="button" data-studio-target="effects"><span>04</span><p class="eyebrow">Effects library</p><h3>Our Signature Finishing</h3><small>View the effects &rarr;</small></button>
+          <button class="studio-category-card" type="button" data-studio-target="work">
+            <span>01</span>
+            <p class="eyebrow">Selected work</p>
+            <h3>Limitless Studio Showreel</h3>
+            <small>Watch the reel &rarr;</small>
+          </button>
+          <button class="studio-category-card" type="button" data-studio-target="showcase">
+            <span>02</span>
+            <p class="eyebrow">Original vs. Limitless Edition</p>
+            <h3>See the Transformation</h3>
+            <small>Compare the edits &rarr;</small>
+          </button>
+          <button class="studio-category-card" type="button" data-studio-target="packages">
+            <span>03</span>
+            <p class="eyebrow">Studio offers</p>
+            <h3>Built for Real Projects</h3>
+            <small>Explore the offers &rarr;</small>
+          </button>
+          <button class="studio-category-card" type="button" data-studio-target="effects">
+            <span>04</span>
+            <p class="eyebrow">Effects library</p>
+            <h3>Our Signature Finishing</h3>
+            <small>View the effects &rarr;</small>
+          </button>
         </div>
       </section>
 
-
-      <dialog class="content-dialog" id="work" aria-labelledby="work-dialog-title">
-        <div class="content-dialog-shell">
-          <button class="content-dialog-close" type="button" aria-label="Close selected work">&times;</button>
-      <section class="showreel-section">
-        <div class="section-heading reveal-ready">
-          <p class="eyebrow">Selected work</p>
-          <h2 id="work-dialog-title">Limitless Studio.</h2>
-        </div>
-        <div class="showreel-grid">
-
-          
-          <article class="feature-video reveal-ready">
-            <video src="assets/videos/Limitlessstudiocompress.mp4" controls autoplay muted loop playsinline></video>
-            <div>
-              <p class="eyebrow">Limitless Studio.</p>
-              <h3>Music-Driven Cinematic Edits</h3>
-              <p>Rhythm cuts, visual treatment, motion, transitions, and energy shaped around the sound.</p>
-            </div>
-          </article>
-
-          
-        </div>
-        
-       
-        
-        
-      </section>
-        </div>
-      </dialog>
-
-      
-      <dialog class="content-dialog" id="showcase" aria-labelledby="showcase-dialog-title">
-        <div class="content-dialog-shell">
-          <button class="content-dialog-close" type="button" aria-label="Close original versus Limitless showcase">&times;</button>
-      <section>
-
-
-
-        <div class="section-heading reveal-ready">
-          <p class="eyebrow">Original vs. Limitless Edition</p>
-          <h2 id="showcase-dialog-title">See what the Limitless finish changes.</h2>
-        </div>
-        
-        
-        <div class="comparison-grid">
-
-
-          <article class="feature-video reveal-ready">
-            <video src="./assets/videos/BookerTcom.mp4" controls playsinline autoplay loop muted ></video>
-            <div>
-              
-              <h3>Limitless Edition</h3>
-
-            </div>
-          </article>
-
-
-          <article class="feature-video reveal-ready">
-            <video src="./assets/videos/OfficialBooketTcompressed.mp4" controls playsinline autoplay loop muted ></video>
-            <div>
-
-              <h3>Original Video</h3>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-
-      </section>
-        </div>
-      </dialog>
-
-
-      <dialog class="content-dialog" id="packages" aria-labelledby="packages-dialog-title">
-        <div class="content-dialog-shell">
-          <button class="content-dialog-close" type="button" aria-label="Close studio offers">&times;</button>
-      <section class="packages-section">
-        <div class="section-heading reveal-ready">
-          <p class="eyebrow">Studio offers</p>
-          <h2 id="packages-dialog-title">Built for real projects.</h2>
-        </div>
-        <div class="package-grid">
-          <article class="package-card reveal-ready">
-            <p class="eyebrow">Realtors</p>
-            <h3>Property Promo Package</h3>
-            <ul>
-              <li>✓ Walkthrough and listing reels</li>
-              <li>✓ Exterior, interior, detail pacing</li>
-              <li>✓ Luxury property presentation</li>
-              <li>✓ Social and web exports</li>
-            </ul>
-          </article>
-          <article class="package-card featured-package reveal-ready">
-            <p class="eyebrow">Brands</p>
-            <h3>Ads Campaign Package</h3>
-            <ul>
-              <li>✓ Short ad edit for social</li>
-              <li>✓ Product or service highlight</li>
-              <li>✓ Motion titles and CTA moments</li>
-              <li>✓ Platform-ready delivery</li>
-            </ul>
-          </article>
-          <article class="package-card reveal-ready">
-            <p class="eyebrow">Artists</p>
-            <h3>Music Video Package</h3>
-            <ul>
-              <li>✓ Performance footage edit</li>
-              <li>✓ Beat cuts and visual rhythm</li>
-              <li>✓ Color, transitions, effects</li>
-              <li>✓ Vertical and wide exports</li>
-              <li>✓ VFX & SFX</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-        </div>
-      </dialog>
-
-
-      <dialog class="content-dialog" id="effects" aria-labelledby="effects-dialog-title">
-        <div class="content-dialog-shell">
-          <button class="content-dialog-close" type="button" aria-label="Close effects library">&times;</button>
-      <section class="effects-section">
-        <div class="section-heading reveal-ready">
-          <p class="eyebrow">Effects library</p>
-          <h2 id="effects-dialog-title">Finishing touches that create the signature.</h2>
-        </div>
-        <div class="effects-grid">
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/animationstation.mp4" autoplay muted loop playsinline></video>
-            <h3>Animation Station</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/cinematictiles.mp4" autoplay muted loop playsinline></video>
-            <h3>Cinematic Tiles</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/GlithPack.mp4" autoplay muted loop playsinline></video>
-            <h3>Glitch Pack</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/lightleak.mp4" autoplay muted loop playsinline></video>
-            <h3>Light Leak</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/matetransition.mp4" autoplay muted loop playsinline></video>
-            <h3>Mate Transition</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/SaberTransitions.mp4" autoplay muted loop playsinline></video>
-            <h3>Saber Transition</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/TextOverlaid.mp4" autoplay muted loop playsinline></video>
-            <h3>Text Overlay</h3>
-          </article>
-          <article class="effect-card reveal-ready">
-            <video src="assets/videos/transitions.mp4" autoplay muted loop playsinline></video>
-            <h3>Transitions</h3>
-          </article>
-        </div>
-      </section>
-        </div>
-      </dialog>
-
-
+      <!-- ============ Services ============ -->
       <section class="section" id="services">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Services</p>
-          <h2>Production & Services.</h2>
+          <h2>Production &amp; services.</h2>
         </div>
-        <div class="service-grid">
+        <div class="card-grid">
           <article class="service-card reveal-ready">
-            
-            
-
-            <h3><span>01</span> Real Estate</h3>
-            <div class="service-guarantees"><span>&check; 4K HD</span><span>&check; Fast Delivery</span></div>
-            
-            <ul><li>✓ Property Walkthroughs</li><li>✓ Listing Reels</li><li>✓ Drone Cinematics</li><li>✓ Realtor Branding</li></ul>
+            <span class="card-index">01</span>
+            <h3>Real Estate</h3>
+            <div class="service-guarantees"><span>4K HD</span><span>Fast delivery</span></div>
+            <ul class="check-list"><li>Property walkthroughs</li><li>Listing reels</li><li>Drone cinematics</li><li>Realtor branding</li></ul>
           </article>
           <article class="service-card reveal-ready">
-            
-            <h3><span>02</span> Videography</h3>
-            <div class="service-guarantees"><span>&check; 4K HD</span><span>&check; Fast Delivery</span></div>
-            <ul><li>✓ Studio Sessions</li><li>✓ Brand Footage</li><li>✓ Event Coverage</li><li>✓ Behind the Scenes</li></ul>
+            <span class="card-index">02</span>
+            <h3>Videography</h3>
+            <div class="service-guarantees"><span>4K HD</span><span>Fast delivery</span></div>
+            <ul class="check-list"><li>Studio sessions</li><li>Brand footage</li><li>Event coverage</li><li>Behind the scenes</li></ul>
           </article>
           <article class="service-card reveal-ready">
-            
-            <h3><span>03</span>Photography</h3>
-            <div class="service-guarantees"><span>&check; 4K HD</span><span>&check; Fast Delivery</span></div>
-            <ul><li>✓ Professional Portraits</li><li>✓ Campaign Stills</li><li>✓ Product Photography</li><li>✓ Cover Visuals</li></ul>
+            <span class="card-index">03</span>
+            <h3>Photography</h3>
+            <div class="service-guarantees"><span>4K HD</span><span>Fast delivery</span></div>
+            <ul class="check-list"><li>Professional portraits</li><li>Campaign stills</li><li>Product photography</li><li>Cover visuals</li></ul>
           </article>
           <article class="service-card reveal-ready">
-            
-            <h3><span>04</span> Music Video</h3>
-            <div class="service-guarantees"><span>&check; 4K HD</span><span>&check; Fast Delivery</span></div>
-            <ul><li>✓ Beat-Synced Cuts</li><li>✓ Color Grading</li><li>✓ VFX &amp; Transitions</li><li>✓ 4K Delivery</li></ul>
-            
+            <span class="card-index">04</span>
+            <h3>Music Video</h3>
+            <div class="service-guarantees"><span>4K HD</span><span>Fast delivery</span></div>
+            <ul class="check-list"><li>Beat-synced cuts</li><li>Color grading</li><li>VFX &amp; transitions</li><li>4K delivery</li></ul>
           </article>
         </div>
       </section>
 
-      <br>
-      <br>
-      <div class="flow-divider" aria-hidden="true"><span></span></div>
-      <br>
-      <br>
-
+      <!-- ============ Process ============ -->
       <section class="section process-section" id="process">
         <div class="section-heading reveal-ready">
           <p class="eyebrow">Process</p>
           <h2>From concept to final export.</h2>
         </div>
-        <div class="process-grid">
-
-
-          <article class="process-card reveal-ready">
-            
-            <h3><span>01</span> Plan The Visual</h3>
-
-            <div class="service-guarantees"><span>&check; Outline</span><span>&check; Take Notes</span></div>
-
-            <ul><li>✓ Define the Audience</li><li>✓ Choose the Platform</li><li>✓ Shape the Story</li><li>✓ Plan the Deliverables  </li></ul>
-          </article>
-
-
-          <article class="process-card reveal-ready">
-            
-            <h3><span>02</span> Shoot And Edit</h3>
-
-            <div class="service-guarantees"><span>&check; Take Footages</span><span>&check; Editing </span></div>
-
-            <ul><li>✓ Capture/Receive Footages</li><li>✓ Organize the Selects</li><li>✓ Build the Pacing</li><li>✓ Set the Visual Mood</li></ul>
-          </article>
-
-
-          <article class="process-card reveal-ready">
-            
-            <h3><span>03</span> Polish And Deliver</h3>
-
-            <div class="service-guarantees"><span>&check; Timing</span><span>&check; FastDelivery</span></div>
-
-            <ul><li>✓ Color and Sound</li><li>✓ Motion and Titles</li><li>✓ Revision Pass</li><li>✓ Final Export</li></ul>
-          </article>
-
-
-          <article class="process-card reveal-ready">
-            
-            <h3><span>04</span> Launch The Visual</h3>
-
-            <div class="service-guarantees"><span>&check; Publish</span><span>&check; Promote</span></div>
-
-            <ul><li>&check; Receive the Final Master</li><li>&check; Download Platform Exports</li><li>&check; Review the Limitless Finish</li><li>&check; Publish and Promote</li></ul>
-          </article>
-        </div>
+        <ol class="card-grid process-grid">
+          <li class="process-card reveal-ready">
+            <span class="card-index">01</span>
+            <h3>Plan the visual</h3>
+            <div class="service-guarantees"><span>Outline</span><span>Notes</span></div>
+            <ul class="check-list"><li>Define the audience</li><li>Choose the platform</li><li>Shape the story</li><li>Plan the deliverables</li></ul>
+          </li>
+          <li class="process-card reveal-ready">
+            <span class="card-index">02</span>
+            <h3>Shoot and edit</h3>
+            <div class="service-guarantees"><span>Footage</span><span>Editing</span></div>
+            <ul class="check-list"><li>Capture or receive footage</li><li>Organize the selects</li><li>Build the pacing</li><li>Set the visual mood</li></ul>
+          </li>
+          <li class="process-card reveal-ready">
+            <span class="card-index">03</span>
+            <h3>Polish and deliver</h3>
+            <div class="service-guarantees"><span>Timing</span><span>Fast delivery</span></div>
+            <ul class="check-list"><li>Color and sound</li><li>Motion and titles</li><li>Revision pass</li><li>Final export</li></ul>
+          </li>
+          <li class="process-card reveal-ready">
+            <span class="card-index">04</span>
+            <h3>Launch the visual</h3>
+            <div class="service-guarantees"><span>Publish</span><span>Promote</span></div>
+            <ul class="check-list"><li>Receive the final master</li><li>Download platform exports</li><li>Review the Limitless finish</li><li>Publish and promote</li></ul>
+          </li>
+        </ol>
       </section>
 
-
+      <!-- ============ Pricing ============ -->
       <section class="section pricing-section" id="pricing">
         <div class="pricing-heading reveal-ready">
           <div>
@@ -527,238 +322,39 @@
 
         <div class="pricing-category-grid reveal-ready">
           <button class="pricing-category-card" type="button" data-pricing-target="pricing-monthly" hidden><span>01</span><p class="eyebrow">Monthly content</p><h3>Stay visible. Stay consistent.</h3><small>3 packages &rarr;</small></button>
-          <button class="pricing-category-card pricing-category-exclusive" type="button" data-pricing-target="pricing-realtors"><span>02</span><p class="eyebrow">Exclusively for realtors</p><h3>Market the property. Elevate the listing.</h3><small>2 packages &rarr;</small></button>
-          <button class="pricing-category-card pricing-category-exclusive" type="button" data-pricing-target="pricing-artists"><span>03</span><p class="eyebrow">Exclusively for artists</p><h3>Your sound deserves a cinematic world.</h3><small>2 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-editing"><span>04</span><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3><small>4 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-campaigns"><span>05</span><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3><small>6 packages &rarr;</small></button>
-          <button class="pricing-category-card" type="button" data-pricing-target="pricing-camera"><span>06</span><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3><small>4 packages &rarr;</small></button>
+          <button class="pricing-category-card is-featured" type="button" data-pricing-target="pricing-realtors"><span>02</span><p class="eyebrow">Realtors</p><h3>Market the property. Elevate the listing.</h3><small>2 packages &middot; from $299 &rarr;</small></button>
+          <button class="pricing-category-card is-featured" type="button" data-pricing-target="pricing-artists"><span>03</span><p class="eyebrow">Artists</p><h3>Your sound deserves a cinematic world.</h3><small>2 packages &middot; from $499 &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-editing"><span>04</span><p class="eyebrow">One-off editing</p><h3>Send the footage. Get the finish.</h3><small>4 packages &middot; from $125 &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-campaigns"><span>05</span><p class="eyebrow">Campaigns &amp; production</p><h3>High-impact visuals made to sell.</h3><small>6 packages &middot; from $495 &rarr;</small></button>
+          <button class="pricing-category-card" type="button" data-pricing-target="pricing-camera"><span>06</span><p class="eyebrow">Camera &amp; studio</p><h3>Original content, captured by Limitless.</h3><small>4 packages &middot; from $450 &rarr;</small></button>
           <button class="pricing-category-card" type="button" data-pricing-target="pricing-agencies"><span>07</span><p class="eyebrow">Agency partnerships</p><h3>Premium creative power behind your brand.</h3><small>1 custom option &rarr;</small></button>
         </div>
 
-
-
-
-
-        <dialog class="pricing-dialog" id="pricing-monthly" aria-labelledby="pricing-monthly-title" hidden>
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close monthly content pricing">&times;</button>
-        <div class="pricing-group">
-          <div class="pricing-group-title">
-            <span>01</span>
-            <div><p class="eyebrow">Monthly content</p><h3 id="pricing-monthly-title">Stay visible. Stay consistent.</h3></div>
-          </div>
-          <div class="pricing-grid pricing-grid-featured">
-            <article class="pricing-card">
-              <p class="pricing-kicker">Starter</p>
-              <h3>Social Essentials</h3>
-              <p class="pricing-price"><span>$</span>695<small>/ month</small></p>
-              <p class="pricing-summary">For new brands that need a professional, consistent presence.</p>
-              <div class="scope-tags"><span>Edit only</span><span>Client footage</span></div>
-              <ul><li>4 short-form videos</li><li>Up to 60 seconds each</li><li>Captions, music &amp; color</li><li>1 revision per video</li><li>7-day turnaround</li></ul>
-              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Social%20Essentials%20Package">Choose Essentials</a>
-            </article>
-
-            <article class="pricing-card pricing-card-popular">
-              <span class="popular-badge">Best value</span>
-              <p class="pricing-kicker">Growth</p>
-              <h3>Content Engine</h3>
-              <p class="pricing-price"><span>$</span>1,495<small>/ month</small></p>
-              <p class="pricing-summary">A reliable flow of premium content built to grow attention.</p>
-              <div class="scope-tags"><span>Edit only</span><span>Priority</span></div>
-              <ul><li>10 short-form videos</li><li>1 long-form video up to 10 min</li><li>Motion graphics &amp; captions</li><li>2 revisions per deliverable</li><li>72-hour priority turnaround</li><li>Monthly creative direction call</li></ul>
-              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Content%20Engine%20Package">Build My Content Engine</a>
-            </article>
-
-            <article class="pricing-card">
-              <p class="pricing-kicker">Scale</p>
-              <h3>Brand Authority</h3>
-              <p class="pricing-price"><span>$</span>2,950<small>/ month</small></p>
-              <p class="pricing-summary">Your outsourced creative department for high-volume publishing.</p>
-              <div class="scope-tags"><span>Creative partner</span><span>High volume</span></div>
-              <ul><li>20 short-form videos</li><li>2 long-form videos up to 15 min</li><li>2 ad creatives or promos</li><li>Advanced motion graphics</li><li>Priority editing queue</li><li>Strategy, thumbnails &amp; exports</li></ul>
-              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Brand%20Authority%20Package">Scale My Brand</a>
-            </article>
-          </div>
-        </div>
-          </div>
-        </dialog>
-
-        
-        <dialog class="pricing-dialog" id="pricing-editing" aria-labelledby="pricing-editing-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close one-off editing pricing">&times;</button>
-        <div class="pricing-group">
-          <div class="pricing-group-title">
-            <span>04</span>
-            <div><p class="eyebrow">One-off editing</p><h3 id="pricing-editing-title">Send the footage. Get the finish.</h3></div>
-          </div>
-          <div class="pricing-grid pricing-grid-compact">
-            <article class="pricing-card compact"><p class="pricing-kicker">Quick start</p><h3>Single Social Edit</h3><p class="pricing-price"><span>$</span>125<small>from</small></p><ul><li>Up to 60 seconds</li><li>Captions, music &amp; color</li><li>1 revision</li></ul><a class="button pricing-button" href="#contact">Book an Edit</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Bundle</p><h3>5 Social Edits</h3><p class="pricing-price"><span>$</span>495</p><ul><li>Save $130 vs. singles</li><li>Platform-ready formats</li><li>2 revisions each</li></ul><a class="button pricing-button" href="#contact">Get the Bundle</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">YouTube &amp; podcast</p><h3>Long-Form Edit</h3><p class="pricing-price"><span>$</span>395<small>from</small></p><ul><li>Up to 15 finished minutes</li><li>Audio cleanup &amp; color</li><li>Titles and supporting graphics</li></ul><a class="button pricing-button" href="#contact">Edit My Episode</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Repurpose</p><h3>Content Multiplier</h3><p class="pricing-price"><span>$</span>750</p><ul><li>1 long-form master edit</li><li>5 vertical social clips</li><li>Captions &amp; platform exports</li></ul><a class="button pricing-button" href="#contact">Multiply My Content</a></article>
-          </div>
-        </div>
-          </div>
-        </dialog>
-
-        
-        <dialog class="pricing-dialog" id="pricing-campaigns" aria-labelledby="pricing-campaigns-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close campaigns and production pricing">&times;</button>
-        <div class="pricing-group">
-          <div class="pricing-group-title">
-            <span>05</span>
-            <div><p class="eyebrow">Campaigns &amp; production</p><h3 id="pricing-campaigns-title">High-impact visuals made to sell.</h3></div>
-          </div>
-          <div class="pricing-grid pricing-grid-compact">
-            <article class="pricing-card compact"><p class="pricing-kicker">Paid social</p><h3>Conversion Ad</h3><p class="pricing-price"><span>$</span>550<small>from</small></p><ul><li>15–60 second ad</li><li>Hook, pacing &amp; CTA</li><li>3 aspect ratios</li></ul><a class="button pricing-button" href="#contact">Create My Ad</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Launch</p><h3>Campaign Pack</h3><p class="pricing-price"><span>$</span>1,650<small>from</small></p><ul><li>1 hero promotional video</li><li>4 cutdown variations</li><li>Creative direction included</li></ul><a class="button pricing-button" href="#contact">Launch a Campaign</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Property</p><h3>Real Estate Essential</h3><p class="pricing-price"><span>$</span>495<small>from</small></p><ul><li>60–90 second listing video</li><li>Property detail photos</li><li>24–48 hour delivery</li></ul><a class="button pricing-button" href="#contact">Market a Listing</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Luxury listing</p><h3>Signature Property</h3><p class="pricing-price"><span>$</span>1,250<small>from</small></p><ul><li>Cinematic property film</li><li>Agent intro &amp; social reel</li><li>Premium photo set</li></ul><a class="button pricing-button" href="#contact">Elevate My Listing</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Artist visual</p><h3>Music Video Edit</h3><p class="pricing-price"><span>$</span>850<small>from</small></p><ul><li>Performance or narrative edit</li><li>Beat sync, color &amp; effects</li><li>1 social teaser</li></ul><a class="button pricing-button" href="#contact">Edit My Video</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Full production</p><h3>Music Video Premiere</h3><p class="pricing-price"><span>$</span>2,500<small>from</small></p><ul><li>Creative concept &amp; shoot</li><li>Full edit, grade &amp; VFX</li><li>3 promotional cutdowns</li></ul><a class="button pricing-button" href="#contact">Plan My Production</a></article>
-          </div>
-        </div>
-          </div>
-        </dialog>
-
-
-        <dialog class="pricing-dialog" id="pricing-camera" aria-labelledby="pricing-camera-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close camera and studio pricing">&times;</button>
-        <div class="pricing-group">
-          <div class="pricing-group-title">
-            <span>06</span>
-            <div><p class="eyebrow">Camera &amp; studio</p><h3 id="pricing-camera-title">Original content, captured by Limitless.</h3></div>
-          </div>
-          <div class="pricing-grid pricing-grid-compact">
-            <article class="pricing-card compact"><p class="pricing-kicker">Photography</p><h3>Portrait Session</h3><p class="pricing-price"><span>$</span>450<small>from</small></p><p class="pricing-summary">Clean, intentional imagery for your personal or artist brand.</p><ul><li>Up to 90-minute session</li><li>10 professionally edited images</li><li>1 location &amp; 2 looks</li></ul><a class="button pricing-button" href="#contact">Book a Session</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Product &amp; campaign</p><h3>Brand Photo Set</h3><p class="pricing-price"><span>$</span>750<small>from</small></p><p class="pricing-summary">A cohesive image library for launches, web, and social.</p><ul><li>20 edited campaign images</li><li>Product or lifestyle direction</li><li>Web &amp; social exports</li></ul><a class="button pricing-button" href="#contact">Shoot My Campaign</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Videography</p><h3>Brand Shoot Day</h3><p class="pricing-price"><span>$</span>1,200<small>from</small></p><p class="pricing-summary">Capture premium footage built around your content goals.</p><ul><li>Up to 4 hours on location</li><li>Creative shot list</li><li>1 hero edit + 3 social clips</li></ul><a class="button pricing-button" href="#contact">Plan My Shoot</a></article>
-            <article class="pricing-card compact"><p class="pricing-kicker">Live coverage</p><h3>Event Highlight</h3><p class="pricing-price"><span>$</span>1,350<small>from</small></p><p class="pricing-summary">Preserve the energy of your event in a cinematic recap.</p><ul><li>Up to 4 hours coverage</li><li>60&ndash;90 second highlight</li><li>2 vertical recap clips</li></ul><a class="button pricing-button" href="#contact">Cover My Event</a></article>
-          </div>
-        </div>
-          </div>
-        </dialog>
-
-
-        <dialog class="pricing-dialog" id="pricing-agencies" aria-labelledby="pricing-agencies-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close agency partnership pricing">&times;</button>
-        <div class="pricing-group">
-          <div class="pricing-group-title">
-            <span>07</span>
-            <div><p class="eyebrow">Agency partnerships</p><h3 id="pricing-agencies-title">Premium creative power behind your brand.</h3></div>
-          </div>
-          <div class="pricing-grid pricing-grid-partner">
-            <article class="pricing-card" hidden><p class="pricing-kicker">White-label editing</p><h3>Agency Edit Partner</h3><p class="pricing-price"><span>$</span>1,850<small>/ month</small></p><p class="pricing-summary">Reliable post-production delivered inside your agency workflow.</p><div class="scope-tags"><span>White label</span><span>Editing</span></div><ul><li>Up to 12 short-form deliverables</li><li>Branded project workflow</li><li>Priority queue &amp; 2 revisions</li><li>Client-ready exports</li></ul><a class="button pricing-button" href="#contact">Partner With Us</a></article>
-            <article class="pricing-card pricing-card-popular" hidden><span class="popular-badge">Studio partner</span><p class="pricing-kicker">Full creative support</p><h3>Limitless Department</h3><p class="pricing-price"><span>$</span>3,950<small>/ month</small></p><p class="pricing-summary">Production and post support without building an in-house team.</p><div class="scope-tags"><span>Production</span><span>Post</span><span>Strategy</span></div><ul><li>Monthly production day</li><li>16 short-form deliverables</li><li>2 premium campaign edits</li><li>Creative planning &amp; priority access</li></ul><a class="button pricing-button" href="#contact">Add Limitless to My Team</a></article>
-            <article class="pricing-card"><p class="pricing-kicker">Custom engagement</p><h3>Campaign Partnership</h3><p class="pricing-price pricing-price-custom">Let's talk</p><p class="pricing-summary">For launches requiring a custom crew, scope, or production plan.</p><div class="scope-tags"><span>Custom scope</span><span>Scalable</span></div><ul><li>Creative direction &amp; pre-production</li><li>Photo, video, motion &amp; VFX</li><li>Multi-platform campaign delivery</li><li>Timeline and usage built to fit</li></ul><a class="button pricing-button" href="#contact">Build a Custom Plan</a></article>
-          </div>
-        </div>
-          </div>
-        </dialog>
-
-        <dialog class="pricing-dialog" id="pricing-artists" aria-labelledby="pricing-artists-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close artist pricing">&times;</button>
-            <div class="pricing-group">
-              <div class="pricing-group-title">
-                <span>03</span>
-                <div><p class="eyebrow">Exclusively for artists</p><h3 id="pricing-artists-title">Turn your record into a visual experience.</h3></div>
-              </div>
-              <div class="pricing-grid pricing-grid-exclusive">
-                <article class="pricing-card">
-                  <p class="pricing-kicker">You shoot. We finish.</p>
-                  <h3>Artist Edit</h3>
-                  <p class="pricing-price"><span>$</span>499<small>starting at</small></p>
-                  <p class="pricing-summary">Send us your footage and we&rsquo;ll shape it into a polished music video built around your sound.</p>
-                  <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
-                  <ul><li>Performance or narrative music video edit</li><li>Beat-synced cuts and professional color grade</li><li>Titles, transitions, and visual treatment</li><li>One revision round</li><li>Platform-ready final export</li></ul>
-                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Edit%20Package">Send My Footage</a>
-                </article>
-
-                <article class="pricing-card pricing-card-popular">
-                  <span class="popular-badge">Full production</span>
-                  <p class="pricing-kicker">We shoot. We finish.</p>
-                  <h3>Artist Premiere</h3>
-                  <p class="pricing-price"><span>$</span>2,500<small>starting at</small></p>
-                  <p class="pricing-summary">A complete music-video experience—from creative direction and filming through the final cinematic edit.</p>
-                  <div class="scope-tags"><span>Production</span><span>Editing</span><span>Creative direction</span></div>
-                  <ul><li>Creative concept and pre-production planning</li><li>Professional on-location video shoot</li><li>Full music video edit and color grade</li><li>Motion graphics and visual effects treatment</li><li>One promotional social cutdown</li></ul>
-                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Premiere%20Package">Plan My Music Video</a>
-                </article>
-              </div>
-            </div>
-          </div>
-        </dialog>
-
-        <dialog class="pricing-dialog" id="pricing-realtors" aria-labelledby="pricing-realtors-title">
-          <div class="pricing-dialog-shell">
-            <button class="pricing-dialog-close" type="button" aria-label="Close realtor pricing">&times;</button>
-            <div class="pricing-group">
-              <div class="pricing-group-title">
-                <span>02</span>
-                <div><p class="eyebrow">Exclusively for realtors</p><h3 id="pricing-realtors-title">Listing visuals designed to move attention.</h3></div>
-              </div>
-              <div class="pricing-grid pricing-grid-exclusive">
-                <article class="pricing-card">
-                  <p class="pricing-kicker">You capture. We finish.</p>
-                  <h3>Listing Edit</h3>
-                  <p class="pricing-price"><span>$</span>299<small>starting at</small></p>
-                  <p class="pricing-summary">Send us your property footage and we&rsquo;ll transform it into a clean, compelling listing video.</p>
-                  <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
-                  <ul><li>Up to 60-second property video</li><li>Professional pacing and color correction</li><li>Licensed music and branded titles</li><li>Vertical or horizontal delivery</li><li>One revision round</li></ul>
-                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Edit%20Package">Send My Listing Footage</a>
-                </article>
-
-                <article class="pricing-card pricing-card-popular">
-                  <span class="popular-badge">Fast delivery</span>
-                  <p class="pricing-kicker">We capture. We finish.</p>
-                  <h3>Listing Complete</h3>
-                  <p class="pricing-price"><span>$</span>500<small>starting at</small></p>
-                  <p class="pricing-summary">A streamlined, done-for-you property package with filming, editing, and priority delivery included.</p>
-                  <div class="scope-tags"><span>Videography</span><span>Editing</span><span>Priority</span></div>
-                  <ul><li>On-location property video shoot</li><li>Up to 60-second cinematic listing edit</li><li>Professional color, music, and branded titles</li><li>Social-ready vertical delivery</li><li>Fast-turnaround priority workflow</li></ul>
-                  <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Complete%20Package">Book My Property Shoot</a>
-                </article>
-              </div>
-            </div>
-          </div>
-        </dialog>
-
-        
-
-
-
-
         <div class="pricing-note reveal-ready">
           <p><strong>Every vision is different.</strong> Final quotes depend on shoot length, locations, crew, travel, footage volume, animation complexity, usage, and turnaround. A 50% booking deposit reserves production dates; custom scopes are always available.</p>
-          <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Custom%20Creative%20Quote">Get a custom quote</a>
+          <a class="button primary" href="mailto:v.clainer11@gmail.com?subject=Custom%20Creative%20Quote">Get a custom quote</a>
         </div>
       </section>
 
-
-      <section class="contact-section" id="contact">
+      <!-- ============ Contact ============ -->
+      <section class="section contact-section" id="contact">
         <div class="contact-content reveal-ready">
           <p class="eyebrow">Contact</p>
           <h2>Book the studio for your next visual.</h2>
           <p>
-            Send the project type, footage needs, deadline, target platform, and
-            the style you want. I will help turn the idea into a finished visual
-            that feels premium and ready to publish.
+            Send the project type, footage needs, deadline, target platform, and the style you want.
+            We&rsquo;ll turn the idea into a finished visual that feels premium and is ready to publish.
           </p>
           <div class="contact-actions">
             <a class="button primary" href="mailto:universal@limitlessvisual.com?subject=Limitless%20Visual%20Project">Email the studio</a>
-            <a class="button secondary" href="https://ko-fi.com/devs_support" target="_blank" rel="noreferrer">Support projects</a>
+            <a class="button secondary" href="#pricing">Browse packages</a>
           </div>
+          <a class="contact-support" href="https://ko-fi.com/devs_support" target="_blank" rel="noreferrer">Support our projects on Ko-fi &#8599;</a>
         </div>
       </section>
-
-
     </main>
 
+    <!-- ============ Footer ============ -->
     <footer class="site-footer" aria-labelledby="footer-heading">
       <div class="footer-cta">
         <div>
@@ -773,7 +369,7 @@
 
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="footer-logo" href="#home" aria-label="Limitless Studio home">
+          <a class="brand" href="#home" aria-label="Limitless Studio home">
             <span>CV7</span>
             <strong>Limitless Studio</strong>
           </a>
@@ -782,7 +378,7 @@
 
         <nav class="footer-column" aria-label="Footer navigation">
           <p>Explore</p>
-          <a href="#aboutthestudio">About the studio</a>
+          <a class="about-studio-tag" href="#studio">About the studio</a>
           <a href="#work">Selected work</a>
           <a href="#pricing">Pricing</a>
           <a href="#services">Services</a>
@@ -818,6 +414,341 @@
       </div>
     </footer>
 
+    <!-- ============ Studio dialogs ============ -->
+    <dialog class="studio-info-dialog" id="studio-info-dialog" aria-labelledby="studio-info-title">
+      <div class="studio-info-card">
+        <button class="studio-info-close" type="button" aria-label="Close studio information">&times;</button>
+        <p class="eyebrow">About the studio</p>
+        <h2 id="studio-info-title">Limitless Studio</h2>
+        <p>
+          <a href="https://clay3d11.github.io/LimitlessStudio-VideoShowcase/" aria-label="View Limitless Studio project">Limitless Studio</a>
+          is a creative marketing agency producing polished video edits, music videos, high-converting ads, social media reels, photography campaigns, and premium real estate visuals designed to capture attention, strengthen brands, and drive results.
+        </p>
+        <p>We help brands turn content into attention, leads, and revenue.</p>
+        <ul class="studio-info-list">
+          <li><strong>Agencies</strong> &mdash; Premium creative production that helps you deliver standout campaigns for your clients.</li>
+          <li><strong>Realtors</strong> &mdash; Cinematic property showcases that attract buyers and elevate listings.</li>
+          <li><strong>Brands</strong> &mdash; Polished ads and social content built to turn attention into revenue.</li>
+          <li><strong>Music Artists</strong> &mdash; Music videos and visual campaigns that bring your sound to life.</li>
+        </ul>
+        <a class="button primary" href="#pricing" data-dialog-dismiss>See packages &amp; pricing</a>
+      </div>
+    </dialog>
+
+    <dialog class="studio-info-dialog about-dialog" id="studio" aria-labelledby="about-studio-title">
+      <div class="studio-info-card">
+        <button class="studio-info-close about-studio-close" type="button" aria-label="Close about section">&times;</button>
+        <div class="section-heading">
+          <p class="eyebrow">About Limitless Studio</p>
+          <h2 id="about-studio-title">A full creative studio presence.</h2>
+        </div>
+        <div class="intro-grid">
+          <p class="lead">Limitless Visual is a creative marketing agency helping brands turn attention into impact. We combine cinematic production, strategic storytelling, and digital branding to create content that drives visibility, engagement, and growth. From music videos and commercial campaigns to real estate media, promotional content, and social-first visuals, every project is crafted with intention, precision, and purpose.</p>
+          <div class="studio-mark" aria-label="Studio values">
+            <img src="assets/img/icons/react.png" alt="Limitless Studio visual mark" loading="lazy" />
+            <div class="studio-notes"><span>Direction</span><span>Shooting</span><span>Editing</span><span>Delivery</span></div>
+          </div>
+        </div>
+        <div class="about-highlights" aria-label="Studio highlights">
+          <div>
+            <strong>Luxury Real Estate Marketing</strong>
+            <p>Cinematic property tours, scroll-stopping social media reels, aerial drone showcases, and premium branded content crafted to attract buyers, impress sellers, and elevate your real estate brand.</p>
+            <ul class="check-list"><li>Luxury listing videos</li><li>Social media reels</li><li>Drone cinematics</li><li>Property walkthroughs</li><li>Agent branding</li><li>Motion graphics</li><li>Fast turnaround</li><li>4K delivery</li></ul>
+          </div>
+          <div>
+            <strong>Ads &amp; Campaigns</strong>
+            <p>Scroll-stopping short-form ads, branded campaigns, product promos, and social-first content crafted to capture attention, connect with customers, and drive results for your brand.</p>
+            <ul class="check-list"><li>Short-form video ads</li><li>Social media campaigns</li><li>Product promos</li><li>Brand launch videos</li><li>Motion graphics</li><li>Promotional reels</li><li>Fast turnaround</li><li>4K delivery</li></ul>
+          </div>
+          <div>
+            <strong>Music Videos</strong>
+            <p>Cinematic music videos, performance edits, visual storytelling, and artist-focused content crafted to match your sound, strengthen your identity, and keep your audience watching.</p>
+            <ul class="check-list"><li>Performance video edits</li><li>Beat-synced cuts</li><li>Cinematic color grading</li><li>Visual effects &amp; VFX</li><li>Motion graphics</li><li>Artist branding</li><li>Social media versions</li><li>4K delivery</li></ul>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Content dialog videos load on open (script.js plays them), keeping the first page load light. -->
+    <dialog class="content-dialog" id="work" aria-labelledby="work-dialog-title">
+      <div class="content-dialog-shell">
+        <button class="content-dialog-close" type="button" aria-label="Close selected work">&times;</button>
+        <section>
+          <div class="section-heading reveal-ready">
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-dialog-title">Limitless Studio.</h2>
+          </div>
+          <article class="feature-video reveal-ready">
+            <video src="assets/videos/Limitlessstudiocompress.mp4" controls muted loop playsinline preload="none"></video>
+            <div>
+              <p class="eyebrow">Limitless Studio.</p>
+              <h3>Music-Driven Cinematic Edits</h3>
+              <p>Rhythm cuts, visual treatment, motion, transitions, and energy shaped around the sound.</p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog class="content-dialog" id="showcase" aria-labelledby="showcase-dialog-title">
+      <div class="content-dialog-shell">
+        <button class="content-dialog-close" type="button" aria-label="Close original versus Limitless showcase">&times;</button>
+        <section>
+          <div class="section-heading reveal-ready">
+            <p class="eyebrow">Original vs. Limitless Edition</p>
+            <h2 id="showcase-dialog-title">See what the Limitless finish changes.</h2>
+          </div>
+          <div class="comparison-grid">
+            <article class="feature-video reveal-ready">
+              <video src="assets/videos/BookerTcom.mp4" controls muted loop playsinline preload="none"></video>
+              <div><span class="comparison-label is-after">After</span><h3>Limitless Edition</h3></div>
+            </article>
+            <article class="feature-video reveal-ready">
+              <video src="assets/videos/OfficialBooketTcompressed.mp4" controls muted loop playsinline preload="none"></video>
+              <div><span class="comparison-label">Before</span><h3>Original Video</h3></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog class="content-dialog" id="packages" aria-labelledby="packages-dialog-title">
+      <div class="content-dialog-shell">
+        <button class="content-dialog-close" type="button" aria-label="Close studio offers">&times;</button>
+        <section>
+          <div class="section-heading reveal-ready">
+            <p class="eyebrow">Studio offers</p>
+            <h2 id="packages-dialog-title">Built for real projects.</h2>
+          </div>
+          <div class="package-grid">
+            <article class="package-card reveal-ready">
+              <p class="eyebrow">Realtors</p>
+              <h3>Property Promo Package</h3>
+              <ul class="check-list"><li>Walkthrough and listing reels</li><li>Exterior, interior, detail pacing</li><li>Luxury property presentation</li><li>Social and web exports</li></ul>
+            </article>
+            <article class="package-card featured-package reveal-ready">
+              <p class="eyebrow">Brands</p>
+              <h3>Ads Campaign Package</h3>
+              <ul class="check-list"><li>Short ad edit for social</li><li>Product or service highlight</li><li>Motion titles and CTA moments</li><li>Platform-ready delivery</li></ul>
+            </article>
+            <article class="package-card reveal-ready">
+              <p class="eyebrow">Artists</p>
+              <h3>Music Video Package</h3>
+              <ul class="check-list"><li>Performance footage edit</li><li>Beat cuts and visual rhythm</li><li>Color, transitions, effects</li><li>Vertical and wide exports</li><li>VFX &amp; SFX</li></ul>
+            </article>
+          </div>
+          <a class="button primary dialog-cta" href="#pricing" data-dialog-dismiss>See pricing</a>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog class="content-dialog" id="effects" aria-labelledby="effects-dialog-title">
+      <div class="content-dialog-shell">
+        <button class="content-dialog-close" type="button" aria-label="Close effects library">&times;</button>
+        <section>
+          <div class="section-heading reveal-ready">
+            <p class="eyebrow">Effects library</p>
+            <h2 id="effects-dialog-title">Finishing touches that create the signature.</h2>
+          </div>
+          <div class="effects-grid">
+            <article class="effect-card reveal-ready"><video src="assets/videos/animationstation.mp4" muted loop playsinline preload="none"></video><h3>Animation Station</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/cinematictiles.mp4" muted loop playsinline preload="none"></video><h3>Cinematic Tiles</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/GlithPack.mp4" muted loop playsinline preload="none"></video><h3>Glitch Pack</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/lightleak.mp4" muted loop playsinline preload="none"></video><h3>Light Leak</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/matetransition.mp4" muted loop playsinline preload="none"></video><h3>Matte Transition</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/SaberTransitions.mp4" muted loop playsinline preload="none"></video><h3>Saber Transition</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/TextOverlaid.mp4" muted loop playsinline preload="none"></video><h3>Text Overlay</h3></article>
+            <article class="effect-card reveal-ready"><video src="assets/videos/transitions.mp4" muted loop playsinline preload="none"></video><h3>Transitions</h3></article>
+          </div>
+        </section>
+      </div>
+    </dialog>
+
+    <!-- ============ Pricing dialogs ============
+         script.js turns each .pricing-card into an "Add to project" item.
+         Dialog ids + card <h3> names must match src/catalog.mjs product ids. -->
+    <dialog class="pricing-dialog" id="pricing-monthly" aria-labelledby="pricing-monthly-title" hidden>
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close monthly content pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>01</span>
+            <div><p class="eyebrow">Monthly content</p><h3 id="pricing-monthly-title">Stay visible. Stay consistent.</h3></div>
+          </div>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <p class="pricing-kicker">Starter</p>
+              <h3>Social Essentials</h3>
+              <p class="pricing-price"><span>$</span>695<small>/ month</small></p>
+              <p class="pricing-summary">For new brands that need a professional, consistent presence.</p>
+              <div class="scope-tags"><span>Edit only</span><span>Client footage</span></div>
+              <ul><li>4 short-form videos</li><li>Up to 60 seconds each</li><li>Captions, music &amp; color</li><li>1 revision per video</li><li>7-day turnaround</li></ul>
+              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Social%20Essentials%20Package">Choose Essentials</a>
+            </article>
+            <article class="pricing-card pricing-card-popular">
+              <span class="popular-badge">Best value</span>
+              <p class="pricing-kicker">Growth</p>
+              <h3>Content Engine</h3>
+              <p class="pricing-price"><span>$</span>1,495<small>/ month</small></p>
+              <p class="pricing-summary">A reliable flow of premium content built to grow attention.</p>
+              <div class="scope-tags"><span>Edit only</span><span>Priority</span></div>
+              <ul><li>10 short-form videos</li><li>1 long-form video up to 10 min</li><li>Motion graphics &amp; captions</li><li>2 revisions per deliverable</li><li>72-hour priority turnaround</li><li>Monthly creative direction call</li></ul>
+              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Content%20Engine%20Package">Build My Content Engine</a>
+            </article>
+            <article class="pricing-card">
+              <p class="pricing-kicker">Scale</p>
+              <h3>Brand Authority</h3>
+              <p class="pricing-price"><span>$</span>2,950<small>/ month</small></p>
+              <p class="pricing-summary">Your outsourced creative department for high-volume publishing.</p>
+              <div class="scope-tags"><span>Creative partner</span><span>High volume</span></div>
+              <ul><li>20 short-form videos</li><li>2 long-form videos up to 15 min</li><li>2 ad creatives or promos</li><li>Advanced motion graphics</li><li>Priority editing queue</li><li>Strategy, thumbnails &amp; exports</li></ul>
+              <a class="button pricing-button" href="mailto:universal@limitlessvisual.com?subject=Brand%20Authority%20Package">Scale My Brand</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-realtors" aria-labelledby="pricing-realtors-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close realtor pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>02</span>
+            <div><p class="eyebrow">Exclusively for realtors</p><h3 id="pricing-realtors-title">Listing visuals designed to move attention.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-exclusive">
+            <article class="pricing-card">
+              <p class="pricing-kicker">You capture. We finish.</p>
+              <h3>Listing Edit</h3>
+              <p class="pricing-price"><span>$</span>299<small>starting at</small></p>
+              <p class="pricing-summary">Send us your property footage and we&rsquo;ll transform it into a clean, compelling listing video.</p>
+              <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
+              <ul><li>Up to 60-second property video</li><li>Professional pacing and color correction</li><li>Licensed music and branded titles</li><li>Vertical or horizontal delivery</li><li>One revision round</li></ul>
+              <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Edit%20Package">Send My Listing Footage</a>
+            </article>
+            <article class="pricing-card pricing-card-popular">
+              <span class="popular-badge">Fast delivery</span>
+              <p class="pricing-kicker">We capture. We finish.</p>
+              <h3>Listing Complete</h3>
+              <p class="pricing-price"><span>$</span>500<small>starting at</small></p>
+              <p class="pricing-summary">A streamlined, done-for-you property package with filming, editing, and priority delivery included.</p>
+              <div class="scope-tags"><span>Videography</span><span>Editing</span><span>Priority</span></div>
+              <ul><li>On-location property video shoot</li><li>Up to 60-second cinematic listing edit</li><li>Professional color, music, and branded titles</li><li>Social-ready vertical delivery</li><li>Fast-turnaround priority workflow</li></ul>
+              <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Realtor%20Listing%20Complete%20Package">Book My Property Shoot</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-artists" aria-labelledby="pricing-artists-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close artist pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>03</span>
+            <div><p class="eyebrow">Exclusively for artists</p><h3 id="pricing-artists-title">Turn your record into a visual experience.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-exclusive">
+            <article class="pricing-card">
+              <p class="pricing-kicker">You shoot. We finish.</p>
+              <h3>Artist Edit</h3>
+              <p class="pricing-price"><span>$</span>499<small>starting at</small></p>
+              <p class="pricing-summary">Send us your footage and we&rsquo;ll shape it into a polished music video built around your sound.</p>
+              <div class="scope-tags"><span>Client footage</span><span>Edit only</span></div>
+              <ul><li>Performance or narrative music video edit</li><li>Beat-synced cuts and professional color grade</li><li>Titles, transitions, and visual treatment</li><li>One revision round</li><li>Platform-ready final export</li></ul>
+              <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Edit%20Package">Send My Footage</a>
+            </article>
+            <article class="pricing-card pricing-card-popular">
+              <span class="popular-badge">Full production</span>
+              <p class="pricing-kicker">We shoot. We finish.</p>
+              <h3>Artist Premiere</h3>
+              <p class="pricing-price"><span>$</span>2,500<small>starting at</small></p>
+              <p class="pricing-summary">A complete music-video experience&mdash;from creative direction and filming through the final cinematic edit.</p>
+              <div class="scope-tags"><span>Production</span><span>Editing</span><span>Creative direction</span></div>
+              <ul><li>Creative concept and pre-production planning</li><li>Professional on-location video shoot</li><li>Full music video edit and color grade</li><li>Motion graphics and visual effects treatment</li><li>One promotional social cutdown</li></ul>
+              <a class="button pricing-button" href="mailto:v.clainer11@gmail.com?subject=Artist%20Premiere%20Package">Plan My Music Video</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-editing" aria-labelledby="pricing-editing-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close one-off editing pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>04</span>
+            <div><p class="eyebrow">One-off editing</p><h3 id="pricing-editing-title">Send the footage. Get the finish.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-compact">
+            <article class="pricing-card compact"><p class="pricing-kicker">Quick start</p><h3>Single Social Edit</h3><p class="pricing-price"><span>$</span>125<small>from</small></p><ul><li>Up to 60 seconds</li><li>Captions, music &amp; color</li><li>1 revision</li></ul><a class="button pricing-button" href="#contact">Book an Edit</a></article>
+            <article class="pricing-card compact pricing-card-popular"><span class="popular-badge">Save $130</span><p class="pricing-kicker">Bundle</p><h3>5 Social Edits</h3><p class="pricing-price"><span>$</span>495</p><ul><li>Save $130 vs. singles</li><li>Platform-ready formats</li><li>2 revisions each</li></ul><a class="button pricing-button" href="#contact">Get the Bundle</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">YouTube &amp; podcast</p><h3>Long-Form Edit</h3><p class="pricing-price"><span>$</span>395<small>from</small></p><ul><li>Up to 15 finished minutes</li><li>Audio cleanup &amp; color</li><li>Titles and supporting graphics</li></ul><a class="button pricing-button" href="#contact">Edit My Episode</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Repurpose</p><h3>Content Multiplier</h3><p class="pricing-price"><span>$</span>750</p><ul><li>1 long-form master edit</li><li>5 vertical social clips</li><li>Captions &amp; platform exports</li></ul><a class="button pricing-button" href="#contact">Multiply My Content</a></article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-campaigns" aria-labelledby="pricing-campaigns-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close campaigns and production pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>05</span>
+            <div><p class="eyebrow">Campaigns &amp; production</p><h3 id="pricing-campaigns-title">High-impact visuals made to sell.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-compact">
+            <article class="pricing-card compact"><p class="pricing-kicker">Paid social</p><h3>Conversion Ad</h3><p class="pricing-price"><span>$</span>550<small>from</small></p><ul><li>15&ndash;60 second ad</li><li>Hook, pacing &amp; CTA</li><li>3 aspect ratios</li></ul><a class="button pricing-button" href="#contact">Create My Ad</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Launch</p><h3>Campaign Pack</h3><p class="pricing-price"><span>$</span>1,650<small>from</small></p><ul><li>1 hero promotional video</li><li>4 cutdown variations</li><li>Creative direction included</li></ul><a class="button pricing-button" href="#contact">Launch a Campaign</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Property</p><h3>Real Estate Essential</h3><p class="pricing-price"><span>$</span>495<small>from</small></p><ul><li>60&ndash;90 second listing video</li><li>Property detail photos</li><li>24&ndash;48 hour delivery</li></ul><a class="button pricing-button" href="#contact">Market a Listing</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Luxury listing</p><h3>Signature Property</h3><p class="pricing-price"><span>$</span>1,250<small>from</small></p><ul><li>Cinematic property film</li><li>Agent intro &amp; social reel</li><li>Premium photo set</li></ul><a class="button pricing-button" href="#contact">Elevate My Listing</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Artist visual</p><h3>Music Video Edit</h3><p class="pricing-price"><span>$</span>850<small>from</small></p><ul><li>Performance or narrative edit</li><li>Beat sync, color &amp; effects</li><li>1 social teaser</li></ul><a class="button pricing-button" href="#contact">Edit My Video</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Full production</p><h3>Music Video Premiere</h3><p class="pricing-price"><span>$</span>2,500<small>from</small></p><ul><li>Creative concept &amp; shoot</li><li>Full edit, grade &amp; VFX</li><li>3 promotional cutdowns</li></ul><a class="button pricing-button" href="#contact">Plan My Production</a></article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-camera" aria-labelledby="pricing-camera-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close camera and studio pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>06</span>
+            <div><p class="eyebrow">Camera &amp; studio</p><h3 id="pricing-camera-title">Original content, captured by Limitless.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-compact">
+            <article class="pricing-card compact"><p class="pricing-kicker">Photography</p><h3>Portrait Session</h3><p class="pricing-price"><span>$</span>450<small>from</small></p><p class="pricing-summary">Clean, intentional imagery for your personal or artist brand.</p><ul><li>Up to 90-minute session</li><li>10 professionally edited images</li><li>1 location &amp; 2 looks</li></ul><a class="button pricing-button" href="#contact">Book a Session</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Product &amp; campaign</p><h3>Brand Photo Set</h3><p class="pricing-price"><span>$</span>750<small>from</small></p><p class="pricing-summary">A cohesive image library for launches, web, and social.</p><ul><li>20 edited campaign images</li><li>Product or lifestyle direction</li><li>Web &amp; social exports</li></ul><a class="button pricing-button" href="#contact">Shoot My Campaign</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Videography</p><h3>Brand Shoot Day</h3><p class="pricing-price"><span>$</span>1,200<small>from</small></p><p class="pricing-summary">Capture premium footage built around your content goals.</p><ul><li>Up to 4 hours on location</li><li>Creative shot list</li><li>1 hero edit + 3 social clips</li></ul><a class="button pricing-button" href="#contact">Plan My Shoot</a></article>
+            <article class="pricing-card compact"><p class="pricing-kicker">Live coverage</p><h3>Event Highlight</h3><p class="pricing-price"><span>$</span>1,350<small>from</small></p><p class="pricing-summary">Preserve the energy of your event in a cinematic recap.</p><ul><li>Up to 4 hours coverage</li><li>60&ndash;90 second highlight</li><li>2 vertical recap clips</li></ul><a class="button pricing-button" href="#contact">Cover My Event</a></article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="pricing-dialog" id="pricing-agencies" aria-labelledby="pricing-agencies-title">
+      <div class="pricing-dialog-shell">
+        <button class="pricing-dialog-close" type="button" aria-label="Close agency partnership pricing">&times;</button>
+        <div class="pricing-group">
+          <div class="pricing-group-title">
+            <span>07</span>
+            <div><p class="eyebrow">Agency partnerships</p><h3 id="pricing-agencies-title">Premium creative power behind your brand.</h3></div>
+          </div>
+          <div class="pricing-grid pricing-grid-partner">
+            <article class="pricing-card" hidden><p class="pricing-kicker">White-label editing</p><h3>Agency Edit Partner</h3><p class="pricing-price"><span>$</span>1,850<small>/ month</small></p><p class="pricing-summary">Reliable post-production delivered inside your agency workflow.</p><div class="scope-tags"><span>White label</span><span>Editing</span></div><ul><li>Up to 12 short-form deliverables</li><li>Branded project workflow</li><li>Priority queue &amp; 2 revisions</li><li>Client-ready exports</li></ul><a class="button pricing-button" href="#contact">Partner With Us</a></article>
+            <article class="pricing-card pricing-card-popular" hidden><span class="popular-badge">Studio partner</span><p class="pricing-kicker">Full creative support</p><h3>Limitless Department</h3><p class="pricing-price"><span>$</span>3,950<small>/ month</small></p><p class="pricing-summary">Production and post support without building an in-house team.</p><div class="scope-tags"><span>Production</span><span>Post</span><span>Strategy</span></div><ul><li>Monthly production day</li><li>16 short-form deliverables</li><li>2 premium campaign edits</li><li>Creative planning &amp; priority access</li></ul><a class="button pricing-button" href="#contact">Add Limitless to My Team</a></article>
+            <article class="pricing-card"><p class="pricing-kicker">Custom engagement</p><h3>Campaign Partnership</h3><p class="pricing-price pricing-price-custom">Let's talk</p><p class="pricing-summary">For launches requiring a custom crew, scope, or production plan.</p><div class="scope-tags"><span>Custom scope</span><span>Scalable</span></div><ul><li>Creative direction &amp; pre-production</li><li>Photo, video, motion &amp; VFX</li><li>Multi-platform campaign delivery</li><li>Timeline and usage built to fit</li></ul><a class="button pricing-button" href="#contact">Build a Custom Plan</a></article>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- ============ Cart + checkout ============ -->
     <aside class="studio-cart" aria-hidden="true" data-cart-drawer>
       <div class="studio-cart-backdrop" data-cart-close></div>
       <div class="studio-cart-panel" role="dialog" aria-modal="true" aria-labelledby="studio-cart-title">
