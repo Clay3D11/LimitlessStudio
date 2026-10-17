@@ -624,7 +624,7 @@ h2 em {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: 10px;
-    background: rgba(12, 12, 16, .98);
+    background: var(--bg-raised);
     box-shadow: var(--shadow);
   }
 
@@ -1409,7 +1409,7 @@ h2 em {
   position: absolute;
   top: -160px;
   left: 8%;
-  width: 420px;
+  width: min(420px, 84%);
   height: 260px;
   border-radius: 50%;
   background: rgba(245, 198, 117, .08);
@@ -1724,10 +1724,14 @@ dialog::backdrop {
 
 .studio-mark {
   position: relative;
-  display: grid;
+  display: flex;
   min-height: 320px;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
   overflow: hidden;
+  padding: 28px 14px 14px;
   border: 1px solid var(--gold-line);
   border-radius: var(--radius-lg);
   background: radial-gradient(circle, rgba(245, 198, 117, .12), transparent 62%), var(--surface);
@@ -1740,10 +1744,9 @@ dialog::backdrop {
 }
 
 .studio-notes {
-  position: absolute;
-  inset: auto 14px 14px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
   gap: 6px;
 }
 
@@ -1964,10 +1967,6 @@ dialog::backdrop {
 
   .studio-mark {
     min-height: 240px;
-  }
-
-  .studio-notes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
