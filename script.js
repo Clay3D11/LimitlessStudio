@@ -109,6 +109,11 @@ aboutStudioDialog?.addEventListener("click", (event) => {
   if (event.target === aboutStudioDialog) aboutStudioDialog.close();
 });
 
+// In-dialog CTAs (e.g. "See pricing") close their dialog before jumping to the section.
+$$("[data-dialog-dismiss]").forEach((link) => {
+  link.addEventListener("click", () => link.closest("dialog")?.close());
+});
+
 const revealItems = $$(".reveal-ready");
 
 if ("IntersectionObserver" in window) {
