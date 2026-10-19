@@ -1025,9 +1025,58 @@ h2 em {
   }
 }
 
-@media (max-width: 600px) {
+/* Small screens: compact 2x2 cards, matching services & process */
+@media (max-width: 720px) {
   .segment-grid {
-    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 8px;
+  }
+
+  .segment-card {
+    padding: 16px 12px;
+  }
+
+  .segment-card .eyebrow {
+    margin-bottom: 6px;
+    font-size: .62rem;
+  }
+
+  .segment-card h3 {
+    margin-bottom: 10px;
+    font-size: .95rem;
+  }
+
+  .segment-card .check-list {
+    gap: 6px;
+    margin-bottom: 12px;
+    font-size: .78rem;
+  }
+
+  .segment-card .check-list li {
+    padding-left: 18px;
+  }
+
+  .segment-card .check-list li::before {
+    width: 13px;
+    height: 13px;
+    font-size: .52rem;
+  }
+
+  .segment-price {
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: .74rem;
+  }
+
+  .segment-price strong {
+    font-size: 1.15rem;
+  }
+
+  .segment-card .button {
+    min-height: 0;
+    padding: 9px 6px;
+    font-size: .7rem;
+    white-space: normal;
   }
 }
 
@@ -2189,6 +2238,13 @@ dialog::backdrop {
 .pricing-group-title h3 {
   margin: 0;
   font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+}
+
+.pricing-group-sub {
+  max-width: 560px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
 }
 
 .pricing-grid {
