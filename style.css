@@ -664,17 +664,51 @@ h2 em {
 
 @media (max-width: 640px) {
   :root {
-    --header-h: 64px;
+    --header-h: 76px;
   }
 
   .brand strong {
     display: none;
   }
 
+  /* Touch-sized header controls and menu links */
+  .brand span {
+    width: 48px;
+    height: 48px;
+  }
+
   .header-cta {
-    min-height: 40px;
-    padding: 0 14px;
-    font-size: .8rem;
+    min-height: 50px;
+    padding: 0 18px;
+    font-size: .95rem;
+  }
+
+  .studio-cart-button {
+    min-width: 50px;
+    min-height: 50px;
+    justify-content: center;
+  }
+
+  .studio-cart-button strong {
+    min-width: 32px;
+    height: 32px;
+    font-size: .85rem;
+  }
+
+  .menu-button {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+  }
+
+  .menu-button span {
+    width: 24px;
+  }
+
+  .site-nav a,
+  .nav-dropdown summary {
+    min-height: 56px;
+    font-size: 1.15rem;
   }
 }
 
@@ -845,6 +879,22 @@ h2 em {
   .hero-reel {
     width: min(640px, 100%);
     margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .button:not(.header-cta) {
+    min-height: 58px;
+    font-size: 1.05rem;
+  }
+
+  .studio-info-close,
+  .content-dialog-close,
+  .pricing-dialog-close,
+  .studio-request-close,
+  .studio-cart-header > button {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -1073,9 +1123,9 @@ h2 em {
   }
 
   .segment-card .button {
-    min-height: 0;
-    padding: 9px 6px;
-    font-size: .7rem;
+    min-height: 46px;
+    padding: 10px 8px;
+    font-size: .8rem;
     white-space: normal;
   }
 }
