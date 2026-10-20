@@ -660,6 +660,73 @@ h2 em {
   .header-cta {
     margin-left: auto;
   }
+
+  /* Menu: a divider under each item and a cleaner typeface */
+  .site-nav {
+    gap: 0;
+    padding: 6px 16px;
+  }
+
+  .site-nav > a,
+  .nav-dropdown {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-nav > :last-child {
+    border-bottom: 0;
+  }
+
+  .site-nav a,
+  .nav-dropdown summary {
+    border-radius: 0;
+    padding: 0 4px;
+    color: var(--text);
+    font-family: "Manrope", var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -.01em;
+  }
+
+  .site-nav a:hover,
+  .nav-dropdown summary:hover,
+  .nav-dropdown[open] summary {
+    color: var(--gold);
+    background: transparent;
+  }
+
+  .site-nav > a::after {
+    color: var(--gold);
+    content: "\2197";
+    font-size: .85em;
+    opacity: .55;
+  }
+
+  .nav-dropdown summary {
+    display: flex;
+  }
+
+  .nav-dropdown summary::after {
+    margin-left: auto;
+    margin-right: 4px;
+    color: var(--gold);
+  }
+
+  .nav-dropdown > div {
+    margin: 0 0 12px 6px;
+    border-left: 1px solid var(--gold-line);
+    border-radius: 0;
+    padding-left: 14px;
+  }
+
+  .nav-dropdown > div a {
+    min-height: 42px;
+    color: var(--muted);
+    font-size: .98rem;
+    font-weight: 500;
+  }
+
+  .site-nav a[hidden] {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1684,8 +1751,18 @@ h2 em {
   width: min(var(--max), 100% - 2 * var(--gutter));
   margin: clamp(48px, 8vw, 96px) auto 0;
   padding-bottom: 30px;
-  border-top: 1px solid var(--gold-line);
   color: var(--muted);
+}
+
+/* Gold line that fades out at both ends */
+.site-footer::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  content: "";
 }
 
 .site-footer::before {
@@ -1827,7 +1904,105 @@ h2 em {
 }
 
 .back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   justify-self: end;
+  font-weight: 700;
+}
+
+.back-to-top span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--line-hover);
+  border-radius: 50%;
+  color: var(--gold);
+  transition: transform var(--fast) var(--ease), background var(--fast) ease, color var(--fast) ease;
+}
+
+.back-to-top:hover span {
+  border-color: var(--gold);
+  color: var(--on-gold);
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* Featured email, tags & wordmark */
+.footer-mail {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gold-line);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  white-space: nowrap;
+  transition: color var(--fast) ease, border-color var(--fast) ease;
+}
+
+.footer-mail span {
+  color: var(--gold);
+  transition: transform var(--fast) var(--ease);
+}
+
+.footer-mail:hover {
+  border-color: var(--gold);
+  color: var(--champagne);
+}
+
+.footer-mail:hover span {
+  transform: translate(3px, -3px);
+}
+
+.footer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-tags li {
+  border: 1px solid var(--line-hover);
+  border-radius: var(--pill);
+  padding: 7px 13px;
+  color: var(--muted);
+  background: var(--surface);
+  font-size: .72rem;
+  letter-spacing: .04em;
+}
+
+.footer-wordmark {
+  padding-top: clamp(28px, 5vw, 48px);
+  color: transparent;
+  background: linear-gradient(180deg, rgba(245, 198, 117, .38), rgba(245, 198, 117, .02) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, 10.5rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: .95;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.footer-wordmark em {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+.footer-wordmark + .footer-bottom {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
 }
 
 @media (max-width: 1000px) {
@@ -1877,7 +2052,7 @@ h2 em {
 
 @media (max-width: 420px) {
   .footer-main {
-    grid-template-columns: 1fr;
+    gap: 34px 16px;
   }
 }
 
