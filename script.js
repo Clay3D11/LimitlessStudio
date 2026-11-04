@@ -53,7 +53,7 @@ $$('.pricing-dialog').forEach((dialog) => {
   });
 });
 
-const studioDialogIds = ['work', 'showcase', 'packages', 'effects'];
+const studioDialogIds = ['work', 'showcase', 'packages'];
 
 const openStudioDialog = (dialogId) => {
   const dialog = document.getElementById(dialogId);

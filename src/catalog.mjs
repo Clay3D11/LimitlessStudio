@@ -18,7 +18,7 @@ const products = [
   ['pricing-camera-event-highlight','Event Highlight','Camera & studio',135000,'payment'],
   ['pricing-agencies-agency-edit-partner','Agency Edit Partner','Agency partnerships',185000,'subscription'],
   ['pricing-agencies-limitless-department','Limitless Department','Agency partnerships',395000,'subscription'],
-  ['pricing-artists-artist-edit','Artist Edit','Exclusively for artists',49900,'payment'],
+  ['pricing-artists-artist-edit','Artist Edit','Exclusively for artists',79900,'payment'],
   ['pricing-artists-artist-premiere','Artist Premiere','Exclusively for artists',250000,'payment'],
   ['pricing-realtors-listing-edit','Listing Edit','Exclusively for realtors',29900,'payment'],
   ['pricing-realtors-listing-complete','Listing Complete','Exclusively for realtors',50000,'payment']
